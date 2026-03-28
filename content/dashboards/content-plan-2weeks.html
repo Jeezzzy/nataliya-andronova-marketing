@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контент-план 2 недели | Наталья Андронова</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Playfair+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --terracotta: #A0522D;
+  --terracotta-dark: #8B4513;
+  --cream: #F5EDE4;
+  --cream-light: #FAF7F3;
+  --gold: #C4A265;
+  --powder-pink: #E8D4C4;
+  --graphite: #3D3D3D;
+  --graphite-light: #6B6B6B;
+  --white: #FFFFFF;
+  --shadow: rgba(160,82,45,0.12);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Montserrat',sans-serif;
+  background: var(--cream-light);
+  color: var(--graphite);
+  line-height:1.6;
+}
+.header {
+  background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+  color: var(--cream);
+  padding: 2rem;
+  text-align: center;
+}
+.header h1 {
+  font-family:'Unbounded',sans-serif;
+  font-weight:900;
+  font-size:1.8rem;
+  margin-bottom:.5rem;
+}
+.header p { font-size:.95rem; opacity:.85; }
+.stats-bar {
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  padding:1rem 2rem;
+  background:var(--white);
+  border-bottom:2px solid var(--powder-pink);
+  flex-wrap:wrap;
+}
+.stat { text-align:center; }
+.stat .num {
+  font-family:'Unbounded',sans-serif;
+  font-weight:900;
+  font-size:1.5rem;
+  color:var(--terracotta);
+}
+.stat .label { font-size:.75rem; color:var(--graphite-light); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>КОНТЕНТ-ПЛАН: 2 НЕДЕЛИ</h1>
+  <p>Наталья Андронова · 24 марта — 4 апреля 2026</p>
+</div>
+<div class="stats-bar">
+  <div class="stat"><div class="num">10</div><div class="label">Telegram</div></div>
+  <div class="stat"><div class="num">10</div><div class="label">VK</div></div>
+  <div class="stat"><div class="num">10</div><div class="label">Threads</div></div>
+  <div class="stat"><div class="num">6</div><div class="label">Reels</div></div>
+  <div class="stat"><div class="num">34</div><div class="label">Визуал промптов</div></div>
+</div>
+</body>
+</html><style>
+.tabs {
+  display:flex;
+  gap:0;
+  padding:0 1rem;
+  background:var(--cream);
+  border-bottom:2px solid var(--powder-pink);
+  overflow-x:auto;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.tab {
+  padding:.8rem 1.2rem;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.85rem;
+  color:var(--graphite-light);
+  border-bottom:3px solid transparent;
+  transition:all .2s;
+  white-space:nowrap;
+  background:none;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  font-family:'Montserrat',sans-serif;
+}
+.tab:hover { color:var(--terracotta); }
+.tab.active {
+  color:var(--terracotta);
+  border-bottom-color:var(--terracotta);
+  font-weight:700;
+}
+.content { padding:1rem; max-width:900px; margin:0 auto; }
+.section { display:none; }
+.section.active { display:block; }
+.card {
+  background:var(--white);
+  border-radius:12px;
+  padding:1.5rem;
+  margin-bottom:1.2rem;
+  box-shadow:0 2px 12px var(--shadow);
+  border-left:4px solid var(--terracotta);
+  position:relative;
+}
+.card h3 {
+  font-family:'Unbounded',sans-serif;
+  font-size:1rem;
+  color:var(--terracotta);
+  margin-bottom:.3rem;
+}
+.card .meta {
+  font-size:.75rem;
+  color:var(--graphite-light);
+  margin-bottom:.8rem;
+}
+.card .meta span {
+  background:var(--powder-pink);
+  padding:2px 8px;
+  border-radius:20px;
+  margin-right:.4rem;
+}
+.card .text {
+  font-size:.88rem;
+  line-height:1.7;
+  white-space:pre-wrap;
+  max-height:300px;
+  overflow:hidden;
+  transition:max-height .3s;
+}
+.card .text.expanded { max-height:none; }
+.card .toggle-btn {
+  display:inline-block;
+  margin-top:.5rem;
+  color:var(--terracotta);
+  cursor:pointer;
+  font-size:.82rem;
+  font-weight:600;
+  border:none;
+  background:none;
+  font-family:'Montserrat',sans-serif;
+}
+.card .copy-btn {
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  background:var(--terracotta);
+  color:var(--cream);
+  border:none;
+  border-radius:8px;
+  padding:6px 14px;
+  font-size:.75rem;
+  cursor:pointer;
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  transition:background .2s;
+}
+.card .copy-btn:hover { background:var(--terracotta-dark); }
+.card .copy-btn.copied { background:var(--gold); }
+.thread-cont {
+  background:var(--cream-light);
+  border-radius:8px;
+  padding:.8rem 1rem;
+  margin:.4rem 0;
+  border-left:3px solid var(--gold);
+  font-size:.85rem;
+}
+.thread-cont strong {
+  color:var(--terracotta);
+  font-size:.8rem;
+}
+.cta-link {
+  display:inline-block;
+  background:var(--terracotta);
+  color:var(--cream);
+  text-decoration:none;
+  padding:8px 20px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:.82rem;
+  margin-top:.5rem;
+}
+.visual-desc {
+  font-size:.8rem;
+  color:var(--graphite-light);
+  font-style:italic;
+  margin-top:.5rem;
+  padding-top:.5rem;
+  border-top:1px dashed var(--powder-pink);
+}
+.reel-section {
+  margin:.5rem 0;
+  padding:.5rem 0;
+}
+.reel-section h4 {
+  font-size:.82rem;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:.3rem;
+}
+.prompt-block {
+  background:#2C1810;
+  color:var(--cream);
+  border-radius:8px;
+  padding:1rem;
+  font-size:.8rem;
+  font-family:monospace;
+  margin:.5rem 0;
+  position:relative;
+  line-height:1.5;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.calendar-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:.8rem;
+}
+.cal-day {
+  background:var(--white);
+  border-radius:10px;
+  padding:1rem;
+  box-shadow:0 1px 6px var(--shadow);
+  border-top:3px solid var(--terracotta);
+}
+.cal-day .date {
+  font-family:'Unbounded',sans-serif;
+  font-weight:700;
+  font-size:.9rem;
+  color:var(--terracotta);
+}
+.cal-day .platforms {
+  font-size:.75rem;
+  color:var(--graphite-light);
+  margin-top:.3rem;
+}
+.cal-day .platforms span {
+  display:inline-block;
+  background:var(--powder-pink);
+  padding:1px 6px;
+  border-radius:10px;
+  margin:2px 2px;
+  font-size:.7rem;
+}
+</style>
+<div class="tabs">
+  <button class="tab active" onclick="showTab('tg')">📨 Telegram</button>
+  <button class="tab" onclick="showTab('vk')">💬 VK</button>
+  <button class="tab" onclick="showTab('threads')">🧵 Threads</button>
+  <button class="tab" onclick="showTab('reels')">🎬 Reels</button>
+  <button class="tab" onclick="showTab('prompts')">🎨 Промпты</button>
+  <button class="tab" onclick="showTab('calendar')">📅 Календарь</button>
+</div>
+
+<div class="content">
+
+<!-- ========== TELEGRAM ========== -->
+<div id="tg" class="section active">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">📨 Telegram: 10 постов</h2>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>1. Когда мозг засыпает в декрете</h3>
+<div class="meta"><span>24 марта</span><span>Боль/узнавание</span></div>
+<div class="text">Помню ощущение — как будто мозг переводит в режим сна прямо днём.
+
+Ты кормишь, переодеваешь, варишь кашу, и в какой-то момент понимаешь: я перестала что-то думать. Просто двигаюсь как робот.
+
+Это не лень. Не усталость от ребёнка.
+
+Это когда нет разговоров со взрослыми, нет дедлайнов, нет ощущения, что тебя где-то ждут. Нет роли, в которой ты — не мама.
+
+И мозг начинает лениться. Постепенно. Незаметно.
+
+Ты перестаёшь в себе верить. «Я же что-то умела делать?» — вроде про кого-то другого.
+
+Потом приходит паника: «Как я вернусь на работу? Я уже ничего не помню».
+
+Если это про тебя — ты не одна. Со мной было ровно так же.
+
+И знаешь что? Выход есть. Не волшебный, не быстрый, но реальный.
+
+Мозг просыпается не от отпуска. Он просыпается когда ты снова за работой. За интересной работой.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<div class="visual-desc">🎨 Мама в уютной комнате, задумчиво смотрит в окно. Мягкое утреннее освещение.</div>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>2. Оля: бухгалтер → 47К на WB за 5 недель</h3>
+<div class="meta"><span>25 марта</span><span>Кейс</span></div>
+<div class="text">Оля пришла с вопросом: «Можно ли за месяц подняться с нуля?»
+
+Честно ответила: «Смотря что считать нулём и взлётом».
+
+Оля была бухгалтер. В офисе. Затем декрет, ипотека, свёкр в доме — стандартный набор весны 2024.
+
+Вышла на работу на полусставку, но сидит в душном офисе 4 часа и получает 15К. Это не про свободу.
+
+На курс пришла конкретно: хочу WB, хочу цифру больше.
+
+Первые две недели — изучала платформу, смотрела что продаётся, как устроены боксы. Волосы дыбом — кажется сложнее, чем в реальности.
+
+Третья неделя — первый закупочный лист. Инвестировала свои 10К. Первые скромные продажи.
+
+Четвёртая-пятая неделя — подключила здравый смысл. Переделала названия, научилась работать с отзывами, начала смотреть комбинаторику товаров.
+
+На пятой неделе: 47К оборот за месяц.
+
+Не чудо. Не волшебство. Она просто поработала. Честно. По системе.
+
+Сейчас 35К в месяц — стабильный доход. И главное: работает из дома, между детским сном и ужином.
+
+Это возможно.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<div class="visual-desc">🎨 Экран ноутбука с цифрой 47000. Рука женщины на клавиатуре.</div>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>3. 3 профессии с телефона в декрете</h3>
+<div class="meta"><span>26 марта</span><span>Образовательный</span></div>
+<div class="text">Про профессии, которые я кураторю, часто спрашивают: «А правда её можно делать с телефона?»
+
+Правда.
+
+Менеджер маркетплейсов (WB/Ozon) — 2-3 часа в неделю на старте, доход от 25К.
+Копирайтер — минимум: ноутбук и голова, доход 15-35К.
+Администратор соцсетей — 15-30 мин в день на живое общение, доход от 15К.
+
+Все три профессии — это не про быстрый взлёт. Это про систематичность.
+
+Волшебной кнопки не бывает. Но кнопка «Начать» — есть.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>4. Почему я рассказываю про Катю</h3>
+<div class="meta"><span>27 марта</span><span>Честность</span></div>
+<div class="text">Часто спрашивают: почему в историях клиентов рассказываешь о Кате, которая не смогла?
+
+Потому что это правда.
+
+Не все, кто приходят на курс, потом зарабатывают 35-50К. Некоторые — нет.
+
+Система работает — но только если она работает. Если ты делаешь шаги.
+
+Я не волшебница. Я иду рядом с тобой, показываю путь, но идёшь ты сама.
+
+Волшебной кнопки не бывает. И если кто-то обещает — врёт.
+
+Гарантии нет. Есть система, которая сработала для Оли, Иры, Ани, Светы. Есть пошаговый план. Есть поддержка. Но выбор — твой.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>5. Навык-страховка: не про миллионы</h3>
+<div class="meta"><span>28 марта</span><span>Продающий/миссия</span></div>
+<div class="text">Я не продаю мечту о миллионах и пляжах.
+
+Я учу навыкам, которые — это твоя страховка.
+
+Страховка от ситуации, когда ты зависишь от одного источника дохода. От офиса, от начальника, от везения.
+
+Менеджер маркетплейса, копирайтер, администратор соцсетей — это навыки, которые все платят. И платят прилично — от 25К в месяц.
+
+Это не зависит от твоей красоты, стажа, связей или удачи. Это зависит только от тебя.
+
+Это не про 100К в месяц. Это про 25-40К, которые — это честные деньги за честный труд.
+
+Волшебной кнопки не бывает. Но кнопка «Я уже не зависима» — давай нажмём её вместе.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>6. Как я сидела в темноте</h3>
+<div class="meta"><span>31 марта</span><span>Личная история</span></div>
+<div class="text">Москва. Февраль. За окном снег и холод.
+
+Я кормлю грудью, второй месяц дома. Первый сын спит плохо, на руках только я. Никакого смысла идти на работу — всё уходит на няню.
+
+Ипотека. Долги свёкру. Муж говорит: «Жди, когда-нибудь взлетим».
+
+Я жду. Жду, жду, жду. И в какой-то момент понимаю: я устала ждать. Я в самой чёрной яме.
+
+Тёмная комната. Слёзы. Мысли про то, что ничего не изменится.
+
+Это не про романтику декрета. Это про реальность для многих.
+
+Я начала искать выход. Не через психолога, а через практику. Нужны деньги — значит нужна работа.
+
+Я учила себя сама. YouTube, форумы, первые клиенты за копейки. Ошибки, переделки, отказы.
+
+Потом — первые 10К. Потом — 20К. Потом — стабильные 35К в месяц.
+
+Деньги решили не всё, но они решили ощущение, что я — ничто. Я снова почувствовала себя взрослой. Состоявшейся. Нужной.
+
+Это вытащило меня из темноты. И я захотела показать другим: выход есть.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>7. "Мне 38, поздно" — Ира говорит нет</h3>
+<div class="meta"><span>1 апреля</span><span>Кейс/возражение</span></div>
+<div class="text">Ира пришла и сразу: «Мне 38. Я вообще не в тренде. Я не умею в социальные сети. Я ещё старше всех конкурентов».
+
+Три «но». Три блока. Я слышу это часто.
+
+Ира была маркетолог в крупной компании. 15 лет опыта. Умная, структурированная.
+
+На курс — про администратора соцсетей.
+
+Первая неделя: «Я не знаю TikTok». Вторая: «Я не понимаю это». Третья: первый клиент. Не молодежный блог, а серьёзный B2B аккаунт.
+
+За месяц: три клиента. 38К в месяц. Сейчас: 55К. Работает из кафе.
+
+Её возраст, её опыт, её сдержанность — это не минусы. Это плюсы.
+
+Возраст — это не помеха. Это ресурс.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>8. Что будет если ничего не менять</h3>
+<div class="meta"><span>2 апреля</span><span>Провокация</span></div>
+<div class="text">Допустим, ты ничего не делаешь.
+
+Сидишь дома, ухаживаешь за детьми, получаешь одобрение общества. «Ты мама, это уже работа».
+
+А потом? Ребёнок идёт в школу. У тебя появляется время. И ты идёшь на работу. Офис. Зарплата 30-50К.
+
+Или ты остаёшься дома. И паника: я же ничего не умею. Я выпала из профессии.
+
+Или второй вариант: ты сейчас занимаешь позицию: «Я готова. Я учусь».
+
+За три месяца — новый навык. За четыре — первые клиенты. За пять — стабильный доход 25-40К.
+
+Какой вариант выбираешь ты? Ожидание или действие.
+
+Волшебной кнопки не бывает. Но выбор — всегда есть.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>9. Света: муж был против → стал фанатом</h3>
+<div class="meta"><span>3 апреля</span><span>Кейс</span></div>
+<div class="text">Света пришла на курс и сразу оговорилась: «Муж не одобряет. Говорит, это пустая трата денег. Но я попробую скрытно».
+
+Муж разозлился. «Зачем тебе это? Я же обеспечиваю».
+
+Света стояла на своём. Она хотела не денег — хотела чувствовать себя нужной.
+
+Первый месяц: 15К. Муж: «О... может, не так уж это плохо».
+Третий месяц: 28К.
+Четвёртый месяц: 40К — и уже система.
+
+Муж — теперь первый её фанатик. Помогает с логистикой, советует по бизнесу, гордится.
+
+Он увидел не деньги. Он увидел, как изменилась Света. Её уверенность. Её улыбка.
+
+Деньги — это побочный эффект. Основной эффект: ты снова становишься собой.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>10. Один шаг</h3>
+<div class="meta"><span>4 апреля</span><span>Продающий/CTA</span></div>
+<div class="text">Я не знаю, где ты сейчас.
+
+Может быть, ты в коридоре с полусонным ребёнком на руках и читаешь это в Telegram.
+
+Я была во всех этих местах.
+
+Может. Но только если ты сделаешь один шаг. Не сто шагов. Не марафон. Один. Маленький.
+
+Напиши мне. Расскажи, что тебя волнует. Какие профессии интересуют. Сколько ты хочешь получать в месяц.
+
+Я отвечу. Скажу честно: будет сложно или нет. Подойдёт ли тебе эта система.
+
+Волшебной кнопки не бывает. Но кнопка «Напиши мне» — есть. Я иду рядом с тобой. Просто рядом.</div>
+<button class="toggle-btn" onclick="toggleText(this)">▼ Развернуть</button>
+<a class="cta-link" href="https://t.me/andronova_nata_bot" target="_blank">→ t.me/andronova_nata_bot</a>
+</div>
+</div>
+<!-- ========== VK ========== -->
+<div id="vk" class="section">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">💬 VK: 10 постов</h2>
+<p style="margin-bottom:1rem;font-size:.85rem;color:var(--graphite-light);">Полные тексты в файле: <code>content/vk/vk-week1-2.md</code>. Посты длиннее (1200-2000 символов), с хештегами и вовлекающими вопросами.</p>
+
+<div class="card"><h3>1. Как я из дня сурка в декрете дошла до 100К удалённо</h3><div class="meta"><span>24 марта</span><span>Личная история</span></div><div class="text" style="max-height:150px">Меня зовут Наталья, я танцую на чемпионатах и зарабатываю 100К+ в месяц удалённо. Но было время, когда я даже не думала, что это возможно...
+#фриланс #удалёнка #заработоконлайн #мамавделе #работаизДома</div><button class="toggle-btn" onclick="toggleText(this)">▼ Полный текст в MD файле</button></div>
+
+<div class="card"><h3>2. 3 профессии которые можно освоить за 4-6 недель</h3><div class="meta"><span>25 марта</span><span>Образовательный</span></div><div class="text" style="max-height:150px">Менеджер WB/Ozon, Копирайтер, Администратор соцсетей. Развёрнутое описание каждой с заработками и сроками. Какая из этих профессий вас больше интересует? 📦 ✍️ или 💬</div></div>
+
+<div class="card"><h3>3. Оля: была бухгалтером → 47К за 5 недель</h3><div class="meta"><span>26 марта</span><span>Развёрнутый кейс</span></div><div class="text" style="max-height:150px">Полная история Оли с неделями обучения: Неделя 1 → онбординг, Неделя 2 → 15К, Неделя 3-4 → 41К, Неделя 5 → 47К. Разбор по шагам.</div></div>
+
+<div class="card"><h3>4. "У меня не получится" — история Кати. Честно.</h3><div class="meta"><span>27 марта</span><span>Антипродажа</span></div><div class="text" style="max-height:150px">Честная история неудачи. Катя пришла, начала учиться, но жизнь вмешалась. Гарантии нет. Но система работает, если ты работаешь.</div></div>
+
+<div class="card"><h3>5. Навык-страховка: не про миллионы</h3><div class="meta"><span>28 марта</span><span>Продающий</span></div><div class="text" style="max-height:150px">Развёрнутый пост про навык как страховку от зависимости. Тарифы: 1990₽ / 7990₽ / 14990₽ / 24990₽.</div></div>
+
+<div class="card"><h3>6. Как я выбралась из долгов</h3><div class="meta"><span>31 марта</span><span>Личная история</span></div><div class="text" style="max-height:150px">Подробная история: ипотека, кредиты, декрет → первые 500₽ на фрилансе → 100К+. Путь из ямы за 3 года.</div></div>
+
+<div class="card"><h3>7. "Мне уже 38 — поздно" (история Иры)</h3><div class="meta"><span>1 апреля</span><span>Кейс/возражение</span></div><div class="text" style="max-height:150px">Ира 42 года, SMM-менеджер. За 6 месяцев от 0 до 55К. Возраст — не помеха, а преимущество.</div></div>
+
+<div class="card"><h3>8. Что будет если ничего не менять</h3><div class="meta"><span>2 апреля</span><span>Провокация</span></div><div class="text" style="max-height:150px">Два сценария развития: ожидание vs действие. Подробный разбор каждого варианта.</div></div>
+
+<div class="card"><h3>9. Света: муж был против</h3><div class="meta"><span>3 апреля</span><span>Кейс</span></div><div class="text" style="max-height:150px">История Светы и её мужа. От скептика до фанатика. 15К → 28К → 40К за 4 месяца.</div></div>
+
+<div class="card"><h3>10. Один шаг до перемен</h3><div class="meta"><span>4 апреля</span><span>CTA</span></div><div class="text" style="max-height:150px">Финальный продающий пост с тарифами и CTA. Один шаг — и начинается другая жизнь.</div></div>
+</div>
+
+<!-- ========== THREADS ========== -->
+<div id="threads" class="section">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">🧵 Threads: 10 тредов (по 7 продолжений)</h2>
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>1. День сурка в декрете</h3>
+<div class="meta"><span>24 марта</span><span>Боль+узнавание</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Ты просыпаешься. Ещё в темноте. Слышишь писк. Кормишь. Укачиваешь. Слёзы — твои или малыша? Не помнишь. Телефон: 6:47. Завтра то же самое. И через месяц. И через год. День сурка, но без веселья.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Помню это. Я была там. Москва, ипотека, ещё один кредит. Муж работает, я в декрете. Его зарплаты не хватает. А я? Я просто тихая, нужная, безопасная. И дико скучаю по себе.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Самое ужасное — ты даже не знаешь, скучаешь ли ты по себе или просто устала. Потому что «себя» больше нет. Есть: просыпаться ночью, переводить газ на меньший огонь, думать — а хватит ли на памперсы?</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> И вот в какой-то момент ты ловишь себя на мысли: «А я вообще что-то умею делать?» Это страшно. Это означает, что ты зависима. От его зарплаты. От его решений. От его настроения.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Я помню эту яму. Помню, как сидела в темноте с телефоном, ища ответ на вопрос, который не могла даже сформулировать. Помню первый гроша в интернете — 500 рублей за статью. Помню, как плакала от радости.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> А потом ошибалась. Много раз. Скачивала курсы за 3К, которые ничему не учили. Буквально всё было неправильно. Но главное — я вышла.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Я не guru. Я женщина, которая нашла три способа зарабатывать удалённо, начиная с нуля. И теперь я учу других мам найти свой путь. Не миллионы. Не гарантии. Просто: навык + доход + независимость. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>2. Почему я показываю неудачи</h3>
+<div class="meta"><span>25 марта</span><span>Философия+честность</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> У меня есть кейс, который я люблю больше всего. Он называется: «Катя. 29 лет. Начала учиться. Не получилось.» И я рассказываю его постоянно. Потому что именно этот кейс говорит правду.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Катя пришла ко мне. Мама двоих детей, 29, уставшая от найма. Мы выбрали направление (копирайтинг). Она начала учиться. И на 4-й неделе сказала: «Наталья, это не моё.»</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Она ушла. И я рассказала об этом. Потому что волшебной кнопки не бывает. И выбор профессии — не исключение.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Меня засыпали вопросами: «Почему ты об этом говоришь? Это же плохая реклама!» А я подумала: это не реклама. Это доверие.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Потому что ты видишь: есть люди, которые вышли (Оля, Ира, Аня). Но есть и Катя. Успех — это не 100%. Это процесс. И выбор.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> Я не инфоцыганка, которая говорит: «Верь в себя, и будешь богата». Я рядом. Я честно скажу: это может не сработать. Но если сработает — ты будешь знать, что это не случайность.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Поэтому я показываю Катю. Поэтому я говорю о своих ошибках. Только честность создаёт настоящее доверие. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>3. 3 профессии с телефона</h3>
+<div class="meta"><span>26 марта</span><span>Образовательный</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> «Наталья, но у меня нет опыта. И компьютер только на кухне.» Правда: опыт берётся из ничего. Компьютер не обязателен. У меня есть 3 профессии, которые ты можешь начать учить ПРЯМО СЕЙЧАС. С телефона.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> ПЕРВАЯ: Менеджер маркетплейсов (WB, Ozon). Ты разбираешь аналитику, пишешь описания товаров, управляешь ценой. Первый заказ — может быть в первый же день.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Оля начала так. Была бухгалтером, потом в декрете. За 5 недель выросла с нуля до 47К. Это не подвиг. Это навык.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> ВТОРАЯ: Копирайтер. Ты пишешь посты для телеграм-каналов, описания услуг, даже письма для email. Первый клиент — может быть через неделю.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Ира пошла по этому пути. Была уставшей SMM-менеджеркой. Сейчас 55К. Свои клиенты. 47 постов за месяц.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> ТРЕТЬЯ: Администратор соцсетей. Ты берёшь маленький бизнес и ведёшь его инстаграм или телеграм. Тариф: 5-15К в месяц.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Это не волшебство. Три конкретных направления, по которым я провожу людей лично. Ты можешь быть следующей. → t.me/andronova_nata_bot</div>
+</div>
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>4. Кейс Оли: из бухгалтера — в менеджера WB</h3>
+<div class="meta"><span>27 марта</span><span>Кейс+вдохновение</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Оля работала бухгалтером. 11 лет. На найме. Потом декрет. И тишина. Муж говорил: «Всё окей, я же работаю.» Но Оля знала — это не окей.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Когда я познакомилась с Олей, она была в точке отчаяния. «Я бухгалтер. Я ничего больше не умею.» Я спросила: «А ты умеешь считать и читать инструкции?»</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Я рассказала ей про маркетплейсы. Оля слушала и кивала: «Это же как бухгалтерия, но для товаров.» Я ответила: «Точно.»</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Первая неделя. Оля создала аккаунт, начала разбираться в аналитике. Я ответила: «Ты не сломаешь маркетплейс. Худшее — это удалить товар и создать новый.»</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Вторая неделя — описания, конкуренты, тестирует цены. Третья — первый заказ! Пятая неделя: Оля подсчитала. 47 тысяч рублей. За месяц. Работая 2-3 часа в день.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> «Наталья, это какой-то сон,» — сказала Оля. «Нет,» — ответила я. «Это просто навык, который ты освоила в пять недель.»</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Это не про Олю. Это про то, что твой опыт в одной области переносится в другую. Твой опыт — это уже 50% успеха. Остальное — техника. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>5. Финансовая независимость — не про миллионы</h3>
+<div class="meta"><span>28 марта</span><span>Философия+миссия</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Я не буду говорить про миллионы. Потому что миллионы — это лотерея. А я про другое. Я про то, чтобы ты могла выключить свет и не волноваться о счётах.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Финансовая независимость начинается с того, чтобы ты зарабатывала больше, чем потребляешь. Чтобы у тебя была подушка на 3 месяца жизни.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Я вышла из декрета на 28К. Это было ничего. Но это были МОИ 28К. Я их зарабатывала. Финансовая независимость произошла раньше, чем 100К.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Финансовая независимость — побочный эффект от того, что ты овладеваешь навыком, который ценится на рынке. Ты не гонишься за деньгами. Ты гонишься за мастерством.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Мастерство в менеджменте маркетплейсов — 47К (Оля). Мастерство в копирайтинге — 55К (Ира). Мастерство в управлении соцсетями — 12К (Аня). Это не миллионы. Это стабильность.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> А потом ты понимаешь, что можешь выбирать. Ты выключишь рабочий чат в 8 вечера. Возьмёшь неделю отпуска, потому что хочешь, а не потому что начальник разрешил.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Не миллионы. Просто: независимость. Способность жить по своим правилам. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>6. «Мне уже 38. Поздно.» — Нет.</h3>
+<div class="meta"><span>31 марта</span><span>Возражение+кейс</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Ира пришла с этой фразой. «Мне 38. Я уже 10 лет SMM-менеджер. Я устала от найма. Но я же старая для переучивания?» Самый частый и самый неправдивый страх.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Ира думала, что если не научится в 25, то уже никогда. Ты купила историю о том, что перемены — это для молодых.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Я рассказала ей про нейропластичность. Просто: мозг учится в любом возрасте. Ира усмехнулась: «Звучит как психология из инстаграма.»</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Мы выбрали направление: копирайтер-фрилансер. Примерно то же самое, что и SMM, но без босса, отчётов и meeting на meeting.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Первый месяц — пишет медленно. Второй: первый клиент! Третий: три клиента. 47 постов. 55К. Ей 38 лет.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> «А почему я раньше не попыталась?» — спросила Ира. «Потому что ты верила в сказку про то, что ты уже старая.»</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Если тебе кажется, что ты уже старая — это просто означает, что ты просто не пробовала. Возраст — не причина. Это оправдание. → t.me/andronova_nata_bot</div>
+</div>
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>7. Что я делаю, когда ученица не справляется</h3>
+<div class="meta"><span>1 апреля</span><span>Метод+поддержка</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Когда ученица говорит: «У меня не получается,» — я не говорю: «Продолжай, ты можешь.» Я не дам ей розовый сахар. Я сделаю то, что называется: иду рядом.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Сначала я слушаю. Реально слушаю. Часто это не про технику. Часто это про страх. Или усталость.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Потом я показываю ей примеры её же работы. «Смотри, вот неделю назад ты писала вот так. А сейчас вот так.» Обычно глаза округляются.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Потом я разбиваю проблему на кусочки. Не получается пост целиком — пишем только хук. Не получается хук — пишем одну строчку.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> И очень важное. Если ученица честно говорит: «Это не мой путь» — я её отпускаю. Как я отпустила Катю. Насилие над собой не создаёт успех.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> Большинство не уходят. Просто нужна пауза и переформулировка задачи. Потом — снова вперёд.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Это мой метод. Я не guru. Я рядом. Я слушаю. Я показываю прогресс. Я отпускаю, если надо. И жду, пока ты разберёшься. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>8. Как я сама выбралась из долгов в декрете</h3>
+<div class="meta"><span>2 апреля</span><span>Личная история</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Москва. 2019. Я в декрете. Ипотека на квартиру. Кредит на ремонт. Маленький ребёнок. Денег не хватает. Это был ад.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Сидела в тёмной комнате и искала: «Как зарабатывать с телефона?» Нашла кучу мусора. Курсы за 3К: «Купи и станешь миллионером.» (Спойлер: не стану.)</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Я начала писать. Статьи на фрилансе. За 500 рублей. Это было смешно. Это было тяжело. Но это было МОЁ.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Параллельно ошибалась. Купила курс по Python (потому что программисты — богатые люди). Поняла, что я не программист. Потом нашла маркетплейсы.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Каждая ошибка — гвоздь. Но они сбивали мозаику. Я поняла: я люблю писать. Я понимаю людей. Я могу помочь малому бизнесу.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> За 3 года: с 500 рублей до 100К+. Никакого волшебства. Просто: пробовала, ошибалась, училась. И долги ушли на ходу.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Путь из ямы существует. Часто он начинается не с большого решения. А с маленького: сегодня я попробую писать. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>9. Почему я не инфоцыганка</h3>
+<div class="meta"><span>3 апреля</span><span>Позиция+антипродажа</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Я не обещаю гарантии. Никогда. Если кто-то говорит: «Купи мой курс, и ты заработаешь 100К» — это ловушка.</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Инфоцыганка — тот, кто говорит: «Это не про работу, это про веру в себя.» Я не говорю такое. Это манипуляция.</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Я говорю: «Это сложно. Ты будешь ошибаться. Может быть, это не твой путь. Это потребует времени и честной работы.»</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Инфоцыганка скрывает неудачи. Я показываю Катю. Инфоцыганка продаёт мечту. Я продаю навык.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Мечта испаряется в сложный момент. Навык остаётся. Если у тебя есть навык менеджмента маркетплейсов, его никто не отберёт. Это страховка, а не лотерея.</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> Я не говорю: трансформация, успех, инвестиции в себя. Я говорю: навык, деньги, независимость, забота.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Волшебной кнопки не бывает. Но есть кнопка работы. Есть кнопка учебы. И есть кнопка выхода из ямы. → t.me/andronova_nata_bot</div>
+</div>
+
+<div class="card">
+<button class="copy-btn" onclick="copyCard(this)">📋 Копировать</button>
+<h3>10. Один вечер, который изменил всё</h3>
+<div class="meta"><span>4 апреля</span><span>Продающий+CTA</span></div>
+<div class="thread-cont"><strong>🧵 1/7</strong> Был обычный вечер. Я танцевала в студии. И ко мне подошла девочка: «Наталья, я знаю тебя из интернета. Я в декрете. Может, ты меня научишь?»</div>
+<div class="thread-cont"><strong>🧵 2/7</strong> Не потому что она купит курс. А потому что она СПРОСИЛА. Вышла из дома с вопросом: может ли мне кто-то помочь?</div>
+<div class="thread-cont"><strong>🧵 3/7</strong> Путь ищут не в интернете. Его ищут в себе. А интернет — просто инструмент, чтобы найти человека, который покажет, где искать.</div>
+<div class="thread-cont"><strong>🧵 4/7</strong> Если ты читаешь это и ты в декрете, и считаешь памперсы, и хочешь независимости — это не случайность. Ты уже готова к изменениям.</div>
+<div class="thread-cont"><strong>🧵 5/7</strong> Четыре варианта: Быстрый старт (1990₽), Система (7990₽), Рост (14990₽), Премиум (24990₽).</div>
+<div class="thread-cont"><strong>🧵 6/7</strong> Важное не в цене. Важное в том, что ты начнёшь. Может, в этот вечер ты напишешь первый пост. Может, завтра создашь аккаунт на маркетплейсе.</div>
+<div class="thread-cont"><strong>🧵 7/7</strong> Один вечер. Один вопрос. Одно решение. Может изменить всё. Следующая — может быть ты. → t.me/andronova_nata_bot</div>
+</div>
+</div>
+<!-- ========== REELS ========== -->
+<div id="reels" class="section">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">🎬 Reels/YouTube Shorts: 6 сценариев</h2>
+
+<div class="card">
+<h3>1. «День сурка» — Узнавание боли</h3>
+<div class="meta"><span>Неделя 1</span><span>20 сек</span><span>talking head</span></div>
+<div class="reel-section"><h4>ХУК (0-3 сек)</h4>«Угадайте, какой сегодня день?» — крупный план, усталый взгляд, чашка кофе</div>
+<div class="reel-section"><h4>ОСНОВА (3-18 сек)</h4>Монтаж повседневности → медленный зум, решительный взгляд. «Это не день сурка. Это выбор.»</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«Приходи туда, где люди выбирают иначе.» → t.me/andronova_nata_bot</div>
+<div class="visual-desc">🎵 Lo-fi beats → энергичная. 90-100 BPM. Эмоция: узнавание → надежда</div>
+</div>
+
+<div class="card">
+<h3>2. «3 профессии с телефона» — Образовательный</h3>
+<div class="meta"><span>Неделя 1</span><span>40 сек</span><span>voiceover + text</span></div>
+<div class="reel-section"><h4>ХУК</h4>«3 удалёнки, которые начать можно со своего телефона»</div>
+<div class="reel-section"><h4>ОСНОВА</h4>1. Менеджер WB/Ozon — 47К (Оля) | 2. Копирайтер — 32К (Аня) | 3. Администратор — 55К (Ира)</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«Выбери одну. Начни сегодня.»</div>
+<div class="visual-desc">🎵 110-120 BPM. Electronic pop. Вдохновение.</div>
+</div>
+
+<div class="card">
+<h3>3. «История Оли: от 0 до 47К» — Кейс</h3>
+<div class="meta"><span>Неделя 1</span><span>35 сек</span><span>talking head + график</span></div>
+<div class="reel-section"><h4>ХУК</h4>«От 0 до 47К. История Оли.» — Познакомьтесь с бухгалтером</div>
+<div class="reel-section"><h4>ОСНОВА</h4>Месяц 1: 4К → Месяц 2: 12К → Месяц 3: 27К → Месяц 4: 47К ✓</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«3 тарифа на выбор. Начни с любого.» Быстрый старт 1990₽ • Система 7990₽ • Рост 14990₽</div>
+<div class="visual-desc">🎵 100-110 BPM. Warm indie pop. Надежда → уверенность</div>
+</div>
+
+<div class="card">
+<h3>4. «Поздно начинать в 38» — Возражение/Ира</h3>
+<div class="meta"><span>Неделя 2</span><span>25 сек</span><span>talking head + статистика</span></div>
+<div class="reel-section"><h4>ХУК</h4>«"Поздно начинать в 38"» — большой красный текст</div>
+<div class="reel-section"><h4>ОСНОВА</h4>Ира, 42 года. За 6 месяцев: 0 → 55K. «Возраст — не помеха. Это преимущество.»</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«Никогда не поздно. Готова начать?»</div>
+<div class="visual-desc">🎵 95 BPM. Ambient + drums. Сомнение → твёрдость</div>
+</div>
+
+<div class="card">
+<h3>5. «Как я выбралась из долгов» — Личная история</h3>
+<div class="meta"><span>Неделя 2</span><span>42 сек</span><span>talking head + архивные кадры</span></div>
+<div class="reel-section"><h4>ХУК</h4>«Я была в долгах. И в декрете.»</div>
+<div class="reel-section"><h4>ОСНОВА</h4>2019 → Декрет, долги → Месяц 1: 500₽ → Месяц 6: 25K₽ → Год 1: 100K+</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«Твой путь начинается здесь.»</div>
+<div class="visual-desc">🎵 90-110 BPM. Acoustic guitar + strings. Сочувствие → вдохновение → радость</div>
+</div>
+
+<div class="card">
+<h3>6. «Один шаг до перемен» — CTA</h3>
+<div class="meta"><span>Неделя 2</span><span>20 сек</span><span>fast-cut + talking head</span></div>
+<div class="reel-section"><h4>ХУК</h4>«Один шаг. Вот и всё.»</div>
+<div class="reel-section"><h4>ОСНОВА</h4>Сегодня → то же. Завтра → система. 47K • 55K • 32K. Четыре тарифа: 1990₽ / 7990₽ / 14990₽ / 24990₽</div>
+<div class="reel-section"><h4>ФИНАЛ</h4>«Сделай первый шаг сейчас.»</div>
+<div class="visual-desc">🎵 120 BPM. Modern pop. Действие → решимость</div>
+</div>
+</div>
+<!-- ========== ПРОМПТЫ ========== -->
+<div id="prompts" class="section">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">🎨 Визуальные промпты: 34 штуки</h2>
+<p style="margin-bottom:1rem;font-size:.85rem;color:var(--graphite-light);">Полный файл: <code>content/visual-prompts/visual-prompts-all.md</code>. Ниже — краткая навигация.</p>
+
+<div class="card" style="border-left-color:var(--gold)">
+<h3>А. Промпты для картинок к постам (10 шт)</h3>
+<div class="text">1. «День сурка» — tired woman, kitchen, terracotta palette
+2. «Три профессии» — three minimalist icons grid layout
+3. «История Оли» — growth chart 0 to 47K
+4. «Возраст не помеха» — confident woman 40-45, growth symbols
+5. «Выход из декрета» — split-frame: dark → bright transformation
+6. «4 тарифа» — four vertical cards, pricing layout
+7. «Менеджер WB» — hand holding smartphone, marketplace app
+8. «Копирайтер» — notebook with handwriting, pen, coffee
+9. «SMM-администратор» — smartphone with social media dashboard
+10. «Одно решение» — woman at crossroads, two paths</div>
+</div>
+
+<div class="card" style="border-left-color:var(--gold)">
+<h3>Б. Карусели Instagram (3 карусели, 22 слайда)</h3>
+<div class="text">КАРУСЕЛЬ 1: «3 профессии с телефона» — 7 слайдов (обложка → WB → копирайтер → SMM → сравнение → тарифы → CTA)
+КАРУСЕЛЬ 2: «5 мифов про удалёнку» — 6 слайдов (обложка → лень → сложность → конкуренция → деньги на ветер → CTA)
+КАРУСЕЛЬ 3: «Путь ученицы: от 0 до первых денег» — 8 слайдов (обложка → день 1 → неделя 1 → неделя 2 → неделя 3 → месяц 1 → месяц 3-4 → финал)</div>
+</div>
+
+<div class="card" style="border-left-color:var(--gold)">
+<h3>В. Обложки Reels (6 шт, 9:16)</h3>
+<div class="text">1. «День сурка» — tired→determined expression
+2. «3 профессии» — pointing at three symbols
+3. «История Оли» — smiling with growth arrow
+4. «Возраст не помеха» — confident mature woman 40+
+5. «Выход из декрета» — warm smile, light rays
+6. «Один шаг» — hand reaching toward camera</div>
+</div>
+
+<div class="card" style="border-left-color:var(--gold)">
+<h3>Г. Stories (5 шт, 9:16)</h3>
+<div class="text">1. Анонс Reel — dynamic motion background
+2. Опрос: Возраст — interactive poll visualization
+3. Вовлечение: Выбор — three engagement zones
+4. Вдохновение: Цифра 47K — impact number
+5. CTA: Последний шанс — urgency attention-grabbing</div>
+</div>
+
+<div class="card" style="border-left-color:var(--gold)">
+<h3>Цветовая палитра для всех промптов</h3>
+<div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap;">
+<div style="background:#A0522D;color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;">Terracotta #A0522D</div>
+<div style="background:#F5EDE4;color:#3D3D3D;padding:8px 16px;border-radius:8px;font-size:.8rem;">Cream #F5EDE4</div>
+<div style="background:#C4A265;color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;">Gold #C4A265</div>
+<div style="background:#E8D4C4;color:#3D3D3D;padding:8px 16px;border-radius:8px;font-size:.8rem;">Powder Pink #E8D4C4</div>
+<div style="background:#3D3D3D;color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;">Graphite #3D3D3D</div>
+</div>
+<div style="font-size:.8rem;color:var(--graphite-light);margin-top:4px;">Шрифты: Unbounded (900) заголовки • Playfair Display (italic) подзаголовки • Montserrat (400-500) текст</div>
+</div>
+</div>
+<!-- ========== КАЛЕНДАРЬ ========== -->
+<div id="calendar" class="section">
+<h2 style="font-family:'Unbounded';color:var(--terracotta);margin:1rem 0;font-size:1.2rem;">📅 Календарь публикаций</h2>
+
+<h3 style="font-family:'Unbounded';font-size:.9rem;color:var(--graphite);margin:1rem 0 .5rem;">Неделя 1: 24-28 марта</h3>
+<div class="calendar-grid">
+<div class="cal-day"><div class="date">24 ПН</div><div class="platforms"><span>TG</span> Мозг засыпает в декрете<br><span>VK</span> День сурка → 100К<br><span>🧵</span> День сурка (7/7)<br><span>🎬</span> «День сурка» 20сек</div></div>
+<div class="cal-day"><div class="date">25 ВТ</div><div class="platforms"><span>TG</span> Кейс Оли: 47К<br><span>VK</span> 3 профессии с телефона<br><span>🧵</span> Почему показываю неудачи (7/7)<br><span>🎬</span> «3 профессии» 40сек</div></div>
+<div class="cal-day"><div class="date">26 СР</div><div class="platforms"><span>TG</span> 3 профессии с телефона<br><span>VK</span> Кейс Оли: 47К WB<br><span>🧵</span> 3 профессии (7/7)<br><span>🎬</span> «История Оли» 35сек</div></div>
+<div class="cal-day"><div class="date">27 ЧТ</div><div class="platforms"><span>TG</span> Почему рассказываю про Катю<br><span>VK</span> История Кати. Честно.<br><span>🧵</span> Кейс Оли (7/7)</div></div>
+<div class="cal-day"><div class="date">28 ПТ</div><div class="platforms"><span>TG</span> Навык-страховка<br><span>VK</span> Навык-страховка<br><span>🧵</span> Финансовая независимость (7/7)</div></div>
+</div>
+
+<h3 style="font-family:'Unbounded';font-size:.9rem;color:var(--graphite);margin:1.5rem 0 .5rem;">Неделя 2: 31 марта — 4 апреля</h3>
+<div class="calendar-grid">
+<div class="cal-day"><div class="date">31 ПН</div><div class="platforms"><span>TG</span> Как я сидела в темноте<br><span>VK</span> Выход из долгов<br><span>🧵</span> «Мне 38. Поздно.» (7/7)<br><span>🎬</span> «Поздно в 38» 25сек</div></div>
+<div class="cal-day"><div class="date">1 АПР</div><div class="platforms"><span>TG</span> Ира: 38 лет, не поздно<br><span>VK</span> Ира: 38 → 55К<br><span>🧵</span> Когда ученица не справляется (7/7)<br><span>🎬</span> «Из долгов» 42сек</div></div>
+<div class="cal-day"><div class="date">2 АПР</div><div class="platforms"><span>TG</span> Что будет если ничего не менять<br><span>VK</span> Провокация: два сценария<br><span>🧵</span> Как выбралась из долгов (7/7)<br><span>🎬</span> «Один шаг» 20сек</div></div>
+<div class="cal-day"><div class="date">3 АПР</div><div class="platforms"><span>TG</span> Света: муж был против<br><span>VK</span> Света: муж стал фанатом<br><span>🧵</span> Почему я не инфоцыганка (7/7)</div></div>
+<div class="cal-day"><div class="date">4 АПР</div><div class="platforms"><span>TG</span> Один шаг (CTA)<br><span>VK</span> Один шаг (CTA)<br><span>🧵</span> Один вечер (7/7)</div></div>
+</div>
+
+<div style="margin-top:1.5rem;padding:1rem;background:var(--white);border-radius:10px;box-shadow:0 1px 6px var(--shadow);">
+<h3 style="font-family:'Unbounded';font-size:.85rem;color:var(--terracotta);">Сводка за 2 недели</h3>
+<table style="width:100%;font-size:.82rem;margin-top:.5rem;border-collapse:collapse;">
+<tr style="background:var(--cream)"><th style="padding:6px;text-align:left">Платформа</th><th>Кол-во</th><th>Формат</th></tr>
+<tr><td style="padding:6px">📨 Telegram</td><td style="text-align:center">10</td><td>600-1200 символов, CTA бот</td></tr>
+<tr style="background:var(--cream-light)"><td style="padding:6px">💬 VK</td><td style="text-align:center">10</td><td>1200-2000 символов, хештеги, вопросы</td></tr>
+<tr><td style="padding:6px">🧵 Threads</td><td style="text-align:center">10</td><td>7 продолжений каждый</td></tr>
+<tr style="background:var(--cream-light)"><td style="padding:6px">🎬 Reels/Shorts</td><td style="text-align:center">6</td><td>20-42 сек, ХУК/ОСНОВА/ФИНАЛ</td></tr>
+<tr><td style="padding:6px">🎨 Визуал промпты</td><td style="text-align:center">34</td><td>10 постов + 3 карусели + 6 обложек + 5 stories</td></tr>
+<tr style="background:var(--terracotta);color:var(--cream);font-weight:700"><td style="padding:6px">ИТОГО</td><td style="text-align:center">70</td><td>единиц контента</td></tr>
+</table>
+</div>
+</div>
+
+</div><!-- /content -->
+<script>
+function showTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+function toggleText(btn) {
+  const text = btn.previousElementSibling || btn.parentElement.querySelector('.text');
+  if (!text) return;
+  if (text.classList.contains('expanded')) {
+    text.classList.remove('expanded');
+    text.style.maxHeight = '300px';
+    btn.textContent = '▼ Развернуть';
+  } else {
+    text.classList.add('expanded');
+    text.style.maxHeight = 'none';
+    btn.textContent = '▲ Свернуть';
+  }
+}
+function copyCard(btn) {
+  const card = btn.closest('.card');
+  const title = card.querySelector('h3')?.textContent || '';
+  const textEl = card.querySelector('.text');
+  const threads = card.querySelectorAll('.thread-cont');
+  let content = title + '\n\n';
+  if (textEl) {
+    content += textEl.textContent.trim();
+  }
+  if (threads.length > 0) {
+    threads.forEach(t => {
+      content += t.textContent.trim() + '\n\n';
+    });
+  }
+  navigator.clipboard.writeText(content.trim()).then(() => {
+    btn.textContent = '✅ Скопировано';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Копировать';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+<div style="text-align:center;padding:2rem 1rem;font-size:.75rem;color:var(--graphite-light);background:var(--cream);">
+  Фабрика Контента · Наталья Андронова · Создано 20.03.2026<br>
+  Fil AI Hub · 70 единиц контента · 5 MD файлов
+</div>
+
+</body>
+</html>

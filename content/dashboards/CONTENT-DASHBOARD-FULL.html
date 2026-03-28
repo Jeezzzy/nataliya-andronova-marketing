@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НАТАЛЬЯ | ФРИЛАНС С 0 — Контент-пак 2026-03-28</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary: #A0522D;
+    --primary-dark: #7B3F22;
+    --accent: #C4A265;
+    --background: #F5EDE4;
+    --foreground: #2D2D2D;
+    --card-bg: #FFF8F2;
+    --border: #D4C4B0;
+    --muted: #8B7D6B;
+    --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    line-height: 1.75;
+    font-size: 16px;
+}
+
+h1, h2, h3, .nav-brand, .hero-badge, .stat-num { font-family: 'Unbounded', sans-serif; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* NAV */
+.nav {
+    position: sticky; top: 0;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 100; padding: 1rem 0;
+    backdrop-filter: blur(12px);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.nav-brand { font-weight: 900; font-size: 1rem; color: var(--primary); letter-spacing: -0.02em; white-space: nowrap; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; overflow-x: auto; }
+.nav-links a { color: var(--foreground); text-decoration: none; font-size: 0.875rem; font-weight: 500; white-space: nowrap; transition: color 0.2s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* HERO */
+.hero { padding: 3.75rem 0; background: linear-gradient(135deg, var(--card-bg) 0%, var(--background) 100%); }
+.hero-badge { display: inline-block; padding: 0.5rem 1rem; background: var(--background); border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--primary); letter-spacing: 0.02em; }
+.hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1.5rem; color: var(--foreground); }
+.hero h1 span { color: var(--primary); }
+.hero-subtitle { font-size: 1.125rem; color: var(--muted); margin-bottom: 2rem; font-weight: 400; }
+.hero-meta { font-size: 0.875rem; color: var(--muted); }
+
+/* STATS */
+.stats-bar { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+@media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .stats-grid { grid-template-columns: repeat(6, 1fr); } }
+.stat-item { text-align: center; padding: 0.75rem; }
+.stat-num { font-size: 1.75rem; font-weight: 900; color: var(--primary); display: block; line-height: 1; }
+.stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; font-weight: 500; }
+
+/* SECTIONS */
+.section { padding: 2.5rem 0; }
+.section-large { padding: 3.75rem 0; }
+@media (min-width: 768px) { .section { padding: 3.75rem 0; } .section-large { padding: 5rem 0; } }
+.section-header { position: relative; margin-bottom: 2rem; padding-top: 1.5rem; }
+.section-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--primary), var(--accent), transparent); }
+h2 { font-size: 28px; font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
+
+/* FILTER */
+.filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; padding: 1rem 1.25rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); align-items: center; }
+.filter-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.5rem; }
+.filter-btn { padding: 0.375rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: var(--background); font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--foreground); font-family: 'Montserrat', sans-serif; }
+.filter-btn:hover, .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* CARDS */
+.card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card-bg); padding: 1.5rem; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(160,82,45,0.1), 0 0 0 1px rgba(160,82,45,0.15); border-color: rgba(160,82,45,0.3); }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; gap: 0.5rem; }
+.card-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; font-family: 'Unbounded', sans-serif; font-size: 0.85rem; }
+.card-num { font-size: 0.7rem; color: var(--muted); white-space: nowrap; font-weight: 600; }
+.card-body { font-size: 0.85rem; line-height: 1.65; color: var(--muted); white-space: pre-line; max-height: 120px; overflow: hidden; transition: max-height 0.5s ease; }
+.card-body.expanded { max-height: 12000px; }
+.card-cta { font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-top: 0.75rem; }
+.card-actions { display: flex; gap: 0.5rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+
+/* BADGES */
+.badge { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; }
+.badge-tg       { background: rgba(0,136,204,0.1);  color: #0077b5; border: 1px solid rgba(0,136,204,0.25); }
+.badge-threads  { background: rgba(28,28,30,0.06);   color: #333;    border: 1px solid rgba(28,28,30,0.2); }
+.badge-reels    { background: rgba(225,48,108,0.1);  color: #c13584; border: 1px solid rgba(225,48,108,0.25); }
+.badge-vk       { background: rgba(74,118,168,0.1);  color: #4a76a8; border: 1px solid rgba(74,118,168,0.25); }
+.badge-visual   { background: rgba(130,70,220,0.1);  color: #7c3aed; border: 1px solid rgba(130,70,220,0.25); }
+.badge-carousel { background: rgba(130,70,220,0.1);  color: #7c3aed; border: 1px solid rgba(130,70,220,0.25); }
+
+/* GRID */
+.grid { display: grid; gap: 1.5rem; }
+.grid-3 { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.25rem 2.25rem; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; font-family: 'Montserrat', sans-serif; }
+.btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; position: relative; overflow: hidden; }
+.btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.3) 70%, transparent 100%); transform: skewX(-20deg); animation: wave-shine 4s ease-in-out infinite; }
+@keyframes wave-shine { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+.btn-primary:hover { transform: scale(1.05); box-shadow: 0 16px 48px rgba(160,82,45,0.35); }
+.btn-sm { padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: var(--radius); background: var(--background); border: 1px solid var(--border); color: var(--foreground); cursor: pointer; transition: all 0.2s; font-family: 'Montserrat', sans-serif; font-weight: 500; }
+.btn-sm:hover { border-color: var(--primary); color: var(--primary); }
+.btn-sm-accent { background: rgba(160,82,45,0.06); border-color: rgba(160,82,45,0.3); color: var(--primary); }
+.btn-sm-accent:hover { background: rgba(160,82,45,0.12); }
+
+/* CTA SECTION */
+.cta-section { padding: 3.75rem 0; background: linear-gradient(135deg, rgba(160,82,45,0.06) 0%, rgba(196,162,101,0.04) 100%); }
+.cta-section p { font-size: 1.125rem; max-width: 640px; margin: 0 auto 2rem; color: var(--muted); }
+
+/* FOOTER */
+.footer { padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.875rem; }
+
+/* TOAST */
+.toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary); color: white; padding: 0.75rem 1.25rem; border-radius: var(--radius); font-size: 0.875rem; font-weight: 600; opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 999; }
+.toast.show { opacity: 1; }
+
+.text-center { text-align: center; }
+
+@media (max-width: 768px) { .container { padding: 0 1rem; } h2 { font-size: 22px; } }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+    <div class="container nav-container">
+        <span class="nav-brand">НАТАЛЬЯ | ФРИЛАНС С 0</span>
+        <ul class="nav-links">
+            <li><a href="#content">Контент</a></li>
+            <li><a href="#stats">Статистика</a></li>
+            <li><a href="#cta">Канал</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">28 марта 2026 — Контент-пак</div>
+        <h1>Наталья Андронова — <span>Контент-пак</span></h1>
+        <p class="hero-subtitle">89 единиц контента: 11 Telegram-постов, 10 Threads-тредов, 10 Reels-сценариев, 11 VK-постов, 5 каруселей, 42 визуал-промпта. Полные тексты, готовые к публикации.</p>
+        <div class="hero-meta">Проект: НАТАЛЬЯ | ФРИЛАНС С 0 &middot; Fil AI Hub / content-dept</div>
+    </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-bar" id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-num">89</span><div class="stat-label">единиц контента</div></div>
+            <div class="stat-item"><span class="stat-num">11</span><div class="stat-label">Telegram</div></div>
+            <div class="stat-item"><span class="stat-num">10</span><div class="stat-label">Threads</div></div>
+            <div class="stat-item"><span class="stat-num">10</span><div class="stat-label">Reels</div></div>
+            <div class="stat-item"><span class="stat-num">11</span><div class="stat-label">VK</div></div>
+            <div class="stat-item"><span class="stat-num">5</span><div class="stat-label">Карусели</div></div>
+            <div class="stat-item"><span class="stat-num">42</span><div class="stat-label">Визуал</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<section id="content" class="section-large">
+    <div class="container">
+        <div class="section-header"><h2>Контент-пак</h2></div>
+
+        <div class="filter-bar">
+            <span class="filter-label">Площадка:</span>
+            <button class="filter-btn active" onclick="filterCards('all', this)">Все (89)</button>
+            <button class="filter-btn" onclick="filterCards('telegram', this)">Telegram (11)</button>
+            <button class="filter-btn" onclick="filterCards('threads', this)">Threads (10)</button>
+            <button class="filter-btn" onclick="filterCards('reels', this)">Reels (10)</button>
+            <button class="filter-btn" onclick="filterCards('vk', this)">VK (11)</button>
+            <button class="filter-btn" onclick="filterCards('carousel', this)">Карусели (5)</button>
+            <button class="filter-btn" onclick="filterCards('visual', this)">Визуал (42)</button>
+        </div>
+
+        <div class="grid grid-3" id="grid">
+
+<!-- ==================== TELEGRAM (11) ==================== -->
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">1 / 84</span>
+    </div>
+    <div class="card-title">Когда мозг засыпает в декрете</div>
+    <div class="card-body" id="b-1">Помню ощущение — как будто мозг переводит в режим сна прямо днём.
+
+Ты кормишь, переодеваешь, варишь кашу, и в какой-то момент понимаешь: я перестала что-то думать. Просто двигаюсь как робот.
+
+Это не лень. Не усталость от ребёнка.
+
+Это когда нет разговоров со взрослыми, нет дедлайнов, нет ощущения, что тебя где-то ждут. Нет роли, в которой ты — не мама.
+
+И мозг начинает лениться. Постепенно. Незаметно.
+
+Ты перестаёшь в себе верить. «Я же что-то умела делать?» — вроде про кого-то другого.
+
+Потом приходит паника: «Как я вернусь на работу? Я уже ничего не помню».
+
+Если это про тебя — ты не одна. Со мной было ровно так же.
+
+И знаешь что? Выход есть. Не волшебный, не быстрый, но реальный.
+
+Мозг просыпается не от отпуска. Он просыпается когда ты снова за работой. За интересной работой.</div>
+    <div class="card-cta">CTA: Если узнала себя — напиши мне → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-1')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-1', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">2 / 84</span>
+    </div>
+    <div class="card-title">Оля: бухгалтер → 47К на WB за 5 недель</div>
+    <div class="card-body" id="b-2">Оля пришла с вопросом: «Можно ли за месяц подняться с нуля?»
+
+Честно ответила: «Смотря что считать нулём и взлётом».
+
+Оля была бухгалтер. В офисе. Затем декрет, ипотека, свёкр в доме — стандартный набор весны 2024.
+
+Вышла на работу на полусставку, но сидит в душном офисе 4 часа и получает 15К. Это не про свободу.
+
+На курс пришла конкретно: хочу WB, хочу цифру больше.
+
+Первые две недели — изучала платформу, смотрела что продаётся, как устроены боксы. Волосы дыбом — кажется сложнее, чем в реальности.
+
+Третья неделя — первый закупочный лист. Инвестировала свои 10К. Первые скромные продажи.
+
+Четвёртая-пятая неделя — подключила здравый смысл. Переделала названия, научилась работать с отзывами, начала смотреть комбинаторику товаров.
+
+На пятой неделе: 47К оборот за месяц.
+
+Не чудо. Не волшебство. Она просто поработала. Честно. По системе.
+
+Сейчас 35К в месяц — стабильный доход. И главное: работает из дома, между детским сном и ужином.
+
+Это возможно.</div>
+    <div class="card-cta">CTA: Хочешь так же? Начни с вопроса → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-2')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-2', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">3 / 84</span>
+    </div>
+    <div class="card-title">3 профессии с телефона в декрете</div>
+    <div class="card-body" id="b-3">Про профессии, которые я кураторю, часто спрашивают: «А правда её можно делать с телефона?»
+
+Правда.
+
+Менеджер маркетплейсов (WB/Ozon)
+
+Начинаешь с анализа на ноутбуке — смотришь категории, ценообразование, конкуренцию. 2-3 часа в неделю.
+
+Потом работаешь: закупочные листы, отслеживаешь продажи, отвечаешь на вопросы покупателей, работаешь с отзывами.
+
+Всё это можно делать через мобильное приложение. Даже ночью, если ребёнок не спит.
+
+Доход: от 25К в месяц, с опытом — 40-50К.
+
+Копирайтер
+
+Пишешь тексты — для сайтов, почтовых рассылок, соцсетей, объявлений.
+
+Минимум: ноутбук и голова. Максимум: ноутбук, голова и вдохновение.
+
+Можешь писать в кафе, в парке, пока ребёнок спит. Один текст — 2-5 часов.
+
+Доход: 500-1500₽ за текст, или 15-35К в месяц постоянным клиентам.
+
+Администратор соцсетей
+
+Планируешь контент, пишешь посты, отвечаешь на комментарии, следишь за аналитикой.
+
+Большая часть работ: подготовка заранее. Расписание, шаблоны, плановые посты.
+
+Потом — 15-30 минут в день на живое общение.
+
+Доход: от 15K в месяц, в зависимости от объёма.
+
+Общее:
+
+Все три профессии — это не про быстрый взлёт. Это про систематичность.
+
+Волшебной кнопки не бывает. Но кнопка «Начать» — есть.</div>
+    <div class="card-cta">CTA: Какая профессия — твоя? Узнай → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-3')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-3', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">4 / 84</span>
+    </div>
+    <div class="card-title">Почему я рассказываю про Катю</div>
+    <div class="card-body" id="b-4">Часто спрашивают: почему в историях клиентов рассказываешь о Кате, которая не смогла?
+
+Потому что это правда.
+
+Не все, кто приходят на курс, потом зарабатывают 35-50К. Некоторые — нет.
+
+Катя пришла с тем же, что и остальные. И всё получала на уроках. Разбирала платформы, смотрела кейсы, сидела на вебинарах.
+
+Но потом не сделала ничего. Не открыла лавку, не написала ни одного текста, не запустила ни один пост в соцсетях.
+
+Были причины. Жизнь, стресс, партнёр против, страх потерять деньги. Я не знаю, что было в голове. Но результата не было.
+
+И я говорю об этом. Потому что это важно.
+
+Это значит:
+
+Система работает — но только если она работает. Если ты делаешь шаги.
+
+Я не волшебница. Я иду рядом с тобой, показываю путь, но идёшь ты сама.
+
+Гарантий нет. И если кто-то обещает — врёт.
+
+Гарантии нет.
+
+Есть система, которая сработала для Оли, Иры, Ани, Светы. Есть пошаговый план. Есть поддержка.
+
+Но выбор — твой.</div>
+    <div class="card-cta">CTA: Сомневаешься? Спроси меня напрямую → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-4')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-4', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">5 / 84</span>
+    </div>
+    <div class="card-title">Навык-страховка: не про миллионы</div>
+    <div class="card-body" id="b-5">Я не продаю мечту о миллионах и пляжах.
+
+Я учу навыкам, которые — это твоя страховка.
+
+Страховка от чего?
+
+От ситуации, когда ты зависишь от одного источника дохода. От офиса, от начальника, от везения.
+
+От того момента, когда случается жизнь — болезнь, развод, переезд — и ты остаёшься без денег.
+
+Что такое навык-страховка?
+
+Это профессия, которую ты можешь делать с дивана. С ноутбуком. Из любого города.
+
+Менеджер маркетплейса, копирайтер, администратор соцсетей — это навыки, которые все платят. И платят прилично — от 25К в месяц.
+
+Почему это важно?
+
+Потому что это не зависит от твоей красоты, стажа, связей или удачи.
+
+Это зависит только от тебя.
+
+Ты можешь учиться между детским сном и ужином. Ты можешь начать зарабатывать, не увольняясь. Ты можешь работать полчаса в день или 5 часов — как позволяет жизнь.
+
+Это не про 100К в месяц. Это про 25-40К, которые — это честные деньги за честный труд.
+
+Это про то, чтобы ты больше не боялась. Чтобы знала: я могу.
+
+Быстрых путей нет. Но путь «Я уже не зависима» — давай пройдём его вместе.</div>
+    <div class="card-cta">CTA: Если узнала себя — напиши мне → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-5')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-5', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">6 / 84</span>
+    </div>
+    <div class="card-title">Как я сидела в темноте</div>
+    <div class="card-body" id="b-6">Москва. Февраль. За окном снег и холод.
+
+Я кормлю грудью, второй месяц дома. Первый сын спит плохо, на руках только я. Никакого смысла идти на работу — всё уходит на няню.
+
+Ипотека. Долги свёкру. Муж говорит: «Жди, когда-нибудь взлетим».
+
+Я жду. Жду, жду, жду.
+
+И в какой-то момент понимаю: я устала ждать. Я в самой чёрной яме.
+
+Тёмная комната. Слёзы. Мысли про то, что ничего не изменится. Что я — неудачница. Что я — плохая мама, потому что я злая и уставшая.
+
+Это не про романтику декрета. Это про реальность для многих.
+
+Я начала искать выход. Не через психолога (хотя может, надо было), а через практику.
+
+Нужны деньги — значит нужна работа.
+
+Работа в офис — нет. Ребёнок не даст.
+
+Работа дома. Удалённо. Ночью, между сном.
+
+Я учила себя сама. YouTube, форумы, первые клиенты за копейки. Ошибки, переделки, отказы.
+
+Потом — первые 10К. Потом — 20К. Потом — стабильные 35К в месяц.
+
+И знаешь что?
+
+Деньги решили не всё, но они решили ощущение, что я — ничто.
+
+Я снова почувствовала себя взрослой. Состоявшейся. Нужной. Потому что мне платили за мой труд.
+
+Это вытащило меня из темноты.
+
+И я захотела показать другим: выход есть.</div>
+    <div class="card-cta">CTA: Хочешь так же? Начни с вопроса → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-6')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-6', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">7 / 84</span>
+    </div>
+    <div class="card-title">"Мне 38, поздно" — Ира говорит нет</div>
+    <div class="card-body" id="b-7">Ира пришла и сразу: «Мне 38. Я вообще не в тренде. Я не умею в социальные сети. Я ещё старше всех конкурентов».
+
+Три «но». Три блока.
+
+Я слышу это часто. И каждый раз отвечаю: «Давай посмотрим».
+
+Ира была маркетолог в крупной компании. 15 лет опыта. Язык русский-английский. Умная, структурированная, но сидит в офисе и получает 60К на бумаге, из которых 40К уходит на налоги и добираться.
+
+На курс — про администратора соцсетей.
+
+Первая неделя: «Я не знаю TikTok».
+
+Вторая: «Я не понимаю это».
+
+Третья: первый клиент. Не молодежный блог, а серьёзный B2B аккаунт компании по управлению недвижимостью.
+
+Ира сделала план, расписала посты, запустила контент. Клиент доволен.
+
+За месяц: три клиента. 38К в месяц.
+
+Сейчас: 55К. Работает из кафе. Между встречами.
+
+Почему ей сработало?
+
+Потому что она — не TikTok. Она — профессионал с опытом.
+
+Её возраст, её опыт, её сдержанность — это не минусы. Это плюсы.
+
+Есть клиенты, которым нужна молодая энергия. А есть клиенты, которым нужна надёжность и опыт. Ира нашла вторых.
+
+И ей не нужно быть в тренде. Ей нужно быть полезной.
+
+Возраст — это не помеха. Это ресурс.</div>
+    <div class="card-cta">CTA: Какая профессия — твоя? Узнай → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-7')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-7', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">8 / 84</span>
+    </div>
+    <div class="card-title">Что будет если ничего не менять</div>
+    <div class="card-body" id="b-8">Допустим, ты ничего не делаешь.
+
+Сидишь дома, ухаживаешь за детьми, получаешь одобрение общества. «Ты мама, это уже работа».
+
+А потом?
+
+Потом ребёнок идёт в школу. Или в садик. У тебя появляется время. Целых 6-8 часов в день.
+
+И ты идёшь на работу. Офис. Зарплата 30-50К, из которых налоги. Дорога туда-сюда — 2 часа жизни в день.
+
+Или ты остаёшься дома. И паника: я же ничего не умею. Я выпала из профессии. Меня не возьмут.
+
+Ты тратишь год на поиск работы. Депрессия.
+
+Потом — работа за 25К. Офис. Босс.
+
+Или второй вариант: ты сейчас не мешаешь, но занимаешь позицию: «Я готова. Я учусь».
+
+Ты берёшь курс — 7-15 часов в месяц. Между сном и домашними делами.
+
+За три месяца — новый навык. За четыре месяца — первые клиенты. За пять месяцев — стабильный доход 25-40К.
+
+Ты работаешь 2-3 часа в день. Из дома. Когда хочешь. Ребёнок может быть рядом.
+
+Потом, когда он пойдёт в школу — ты уже не в панике. Ты уже работаешь. Ты уже знаешь, что умеешь.
+
+Какой вариант выбираешь ты?
+
+Ожидание или действие.
+
+Лёгких решений не бывает. Но выбор — всегда есть.</div>
+    <div class="card-cta">CTA: Сомневаешься? Спроси меня напрямую → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-8')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-8', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">9 / 84</span>
+    </div>
+    <div class="card-title">Света: муж был против → стал фанатом</div>
+    <div class="card-body" id="b-9">Света пришла на курс и сразу оговорилась: «Муж не одобряет. Говорит, это пустая трата денег. Но я попробую скрытно».
+
+Скрытно заниматься курсом 8 часов в месяц сложно, поэтому быстро вышла правда.
+
+Муж разозлился. «Зачем тебе это? Я же обеспечиваю».
+
+Света стояла на своём. Она хотела не денег — хотела чувствовать себя нужной. Хотела свой доход.
+
+Первый месяц курса. Света уже знает о маркетплейсах всё, что можно знать. Открывает пробную лавку. Первые заказы.
+
+Муж смотрит. Молчит.
+
+Второй месяц. Света получает 15К за месяц.
+
+Муж: «О... может, не так уж это плохо».
+
+Третий месяц. 28К.
+
+Четвёртый месяц. 40К, и уже система, и уже не нужно сидеть в ней каждый день.
+
+Муж смотрит на зарплату, смотрит на жену, которая светится от чувства собственного достоинства, и... вдруг понимает.
+
+Теперь муж первый её фанатик. Помогает с логистикой, советует по бизнесу, гордится.
+
+Потому что он увидел не деньги. Он увидел, как изменилась Света.
+
+Её уверенность. Её улыбка. Её спокойствие.
+
+Деньги — это побочный эффект.
+
+Основной эффект: ты снова становишься собой.
+
+И люди, которые тебя любят, это видят.</div>
+    <div class="card-cta">CTA: Хочешь так же? Начни с вопроса → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-9')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-9', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">10 / 84</span>
+    </div>
+    <div class="card-title">Один шаг</div>
+    <div class="card-body" id="b-10">Я не знаю, где ты сейчас.
+
+Может быть, ты в коридоре с полусонным ребёнком на руках и читаешь это в Telegram.
+
+Может быть, ты в кафе и украдкой думаешь о том, что хочешь перемен.
+
+Может быть, ты ночью не спишь и уже в сотый раз гуглишь «как зарабатывать удалённо с малышом дома».
+
+Я была во всех этих местах.
+
+И я знаю, что когда ты видишь историю про Олю, которая за 5 недель получила 47К, или про Иру, которая в 38 выучилась заново — ты думаешь: «А может и мне?»
+
+Может.
+
+Но только если ты сделаешь один шаг.
+
+Не сто шагов. Не марафон.
+
+Один. Маленький.
+
+Напиши мне. Расскажи, что тебя волнует. Почему ты в декрете, а не на работе. Какие профессии интересуют. Сколько ты хочешь получать в месяц.
+
+Я отвечу. Скажу честно: будет сложно или нет. Подойдёт ли тебе эта система.
+
+Может быть, наша работа вместе — это не про твою ситуацию. И я скажу об этом.
+
+Может быть, подойдёт.
+
+Но это узнаешь только если напишешь.
+
+Волшебной кнопки не бывает. Но кнопка «Напиши мне» — есть.
+
+Я иду рядом с тобой. Не тяну. Не давлю.
+
+Просто рядом.
+
+Если ты готова сделать шаг — я жду.</div>
+    <div class="card-cta">CTA: Хочешь так же? Начни с вопроса → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-10')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-10', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="telegram">
+    <div class="card-header">
+        <span class="badge badge-tg">Telegram</span>
+        <span class="card-num">11 / 84</span>
+    </div>
+    <div class="card-title">Сколько это стоит и что внутри (БОНУС)</div>
+    <div class="card-body" id="b-11">Меня часто спрашивают: «Наталья, а сколько стоит?»
+
+Отвечаю открыто. Без звёздочек и мелкого шрифта.
+
+4 тарифа — выбирай по карману и по амбициям:
+
+Быстрый старт — 1 990₽
+Одно направление. Задачи, которые дают моментальный доход. Если не уверена — начни с этого. Дешевле ужина в кафе, а навык остаётся навсегда.
+
+Система — 7 990₽
+18 профессий + куратор. Ты не просто учишь одну вещь — ты видишь всю картину. Выбираешь то, что подходит именно тебе.
+
+Рост — 14 990₽ (хит)
+20+ направлений + куратор + месяц поддержки. Для тех, кому нужен не просто курс, а рядом кто-то, кто скажет: «Ты на верном пути».
+
+Премиум — 24 990₽
+25+ направлений + личная работа со мной + куратор. Полное сопровождение на 3 месяца.
+
+Что внутри каждого тарифа:
+— 14 видеоуроков по 15-30 минут (смотришь когда удобно)
+— Практические задания на реальных примерах
+— Чат поддержки с другими ученицами
+
+Что НЕ входит:
+— Гарантии конкретного дохода. Я не обещаю цифры. Я даю инструменты.
+— Волшебные кнопки. Результат зависит от тебя.
+
+Можно ли перейти на тариф выше?
+Да. Доплатить разницу и повысить уровень в любой момент.
+
+Бесплатный гостевой доступ на 48 часов:
+Посмотри, что внутри. 25 направлений, тест на профориентацию, вводные уроки. Без оплаты. Без обязательств.
+
+Если хочешь попробовать — напиши.</div>
+    <div class="card-cta">CTA: Начни с бесплатного доступа → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-11')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-11', this)">Развернуть</button>
+    </div>
+</div>
+
+<!-- ==================== THREADS (10) ==================== -->
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">12 / 84</span>
+    </div>
+    <div class="card-title">День сурка в декрете</div>
+    <div class="card-body" id="b-12">1/7
+Ты просыпаешься. Ещё в темноте. Слышишь писк.
+Кормишь. Укачиваешь. Слёзы — твои или малыша? Не помнишь.
+Телефон: 6:47. Завтра то же самое.
+И через месяц. И через год.
+День сурка, но без веселья.
+
+2/7
+Помню это. Я была там.
+Москва, ипотека, ещё один кредит. Муж работает, я в декрете.
+Его зарплаты не хватает. А я?
+Я просто тихая, нужная, безопасная.
+И дико скучаю по себе.
+
+3/7
+Самое ужасное — ты даже не знаешь, скучаешь ли ты по себе или просто устала.
+Потому что «себя» больше нет.
+Есть: просыпаться ночью, переводить газ на меньший огонь, думать — а хватит ли на памперсы?
+Есть: привет мужа в 10 вечера, когда ты уже спишь стоя.
+
+4/7
+И вот в какой-то момент ты ловишь себя на мысли:
+«А я вообще что-то умею делать? Кроме как держать маленького человека, чтобы он не упал?»
+Это страшно.
+Это означает, что ты зависима.
+От его зарплаты. От его решений. От его настроения.
+
+5/7
+Я помню эту яму.
+Помню, как сидела в темноте с телефоном, ища ответ на вопрос, который не могла даже сформулировать.
+Помню, как начала искать удалённо.
+Помню первый гроша в интернете — 500 рублей за статью.
+Помню, как плакала от радости.
+
+6/7
+А потом ошибалась. Много раз.
+Скачивала курсы за 3К, которые ничему не учили.
+Сидела по ночам, учила Python, потому что где-то прочитала, что все программисты — это богатые люди.
+Буквально всё было неправильно.
+Но главное — я вышла.
+
+7/7
+Я не guru, которая пробивает потолок.
+Я женщина, которая нашла три способа зарабатывать удалённо, начиная с нуля.
+И теперь я учу других мам найти свой путь.
+Не миллионы. Не гарантии.
+Просто: навык + доход + независимость.
+
+Если откликнулось — напиши мне → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-12')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-12', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">13 / 84</span>
+    </div>
+    <div class="card-title">Почему я показываю неудачи</div>
+    <div class="card-body" id="b-13">1/7
+У меня есть кейс, который я люблю больше всего.
+Он называется: «Катя. 29 лет. Начала учиться. Не получилось.»
+И я рассказываю его постоянно.
+Потому что именно этот кейс говорит правду.
+
+2/7
+Катя пришла ко мне.
+Мама двоих детей, 29, уставшая от найма.
+Мы выбрали направление (копирайтинг).
+Она начала учиться.
+И на 4-й неделе сказала: «Наталья, это не моё.»
+
+3/7
+Она ушла.
+И я рассказала об этом.
+Рассказала, как она плакала, как боялась подвести детей, как решила, что это не её путь.
+Потому что волшебной кнопки не бывает.
+И выбор профессии — не исключение.
+
+4/7
+Знаешь, что произошло?
+Меня засыпали вопросами: «Наталья, почему ты об этом говоришь? Это же плохая реклама!»
+А я подумала: это не реклама. Это доверие.
+Если я буду врать, я что — выглядящу лучше?
+Нет. Я теряю тебя.
+
+5/7
+Потому что ты видишь: есть люди, которые вышли (Оля, Ира, Аня).
+Но есть и Катя.
+И я не скрываю ни первых, ни вторую.
+Потому что успех — это не 100%. Это процесс. И выбор.
+
+6/7
+Я не инфоцыганка, которая говорит: «Верь в себя, и будешь богата».
+Я рядом с тобой.
+Я честно скажу: это может не сработать.
+Но если сработает — ты будешь знать, что это не случайность.
+Это твой навык.
+
+7/7
+Поэтому я показываю Катю.
+Поэтому я говорю о своих ошибках в декрете.
+Потому что только честность создаёт настоящее доверие.
+И только доверие создаёт команду, которая действительно растёт.
+
+Хочешь разобраться, с чего начать? → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-13')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-13', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">14 / 84</span>
+    </div>
+    <div class="card-title">3 профессии, которые можно освоить с телефона</div>
+    <div class="card-body" id="b-14">1/7
+Вот что я слышу часто:
+«Наталья, но у меня нет опыта. И компьютер только на кухне.»
+Правда: опыт берётся из ничего. Компьютер не обязателен.
+У меня есть 3 профессии, которые ты можешь начать учить ПРЯМО СЕЙЧАС.
+С телефона.
+
+2/7
+ПЕРВАЯ: Менеджер маркетплейсов (WB, Ozon).
+Что нужно? Только аккаунт на маркетплейсе + мозг.
+Ты разбираешь аналитику (всё в приложении), пишешь описания товаров, управляешь ценой.
+Первый заказ — может быть в первый же день.
+Деньги — в течение двух недель.
+
+3/7
+Оля начала так.
+Была бухгалтером, потом в декрете, потом я её взяла.
+За 5 недель она выросла с нуля до 47К на маркетплейсах.
+Это не подвиг. Это навык.
+Научиться может каждая, кто захочет разбирать цифры и прочитает инструкцию.
+
+4/7
+ВТОРАЯ: Копирайтер (тексты для интернета).
+Что нужно? Способность писать понятно. И больше ничего.
+Ты пишешь посты для телеграм-каналов, описания услуг, даже письма для email.
+Первый клиент — может быть через неделю.
+Тариф: обычно 500 рублей за пост или 2000+ за проект.
+
+5/7
+Ира пошла по этому пути.
+Была уставшей SMM-менеджеркой на найме с зарплатой 38К.
+Сейчас 55К. Свои клиенты. Написала 47 постов за месяц.
+Телефон, диван, утром кофе, вечером — деньги на карту.
+
+6/7
+ТРЕТЬЯ: Администратор соцсетей.
+Что нужно? Умение организовать контент, общаться с людьми, читать аналитику.
+Ты берёшь маленький бизнес (салон красоты, магазин, услуга) и ведёшь его инстаграм или телеграм.
+Тариф: 5-15К в месяц.
+
+7/7
+Это не волшебство.
+Это три конкретных направления, по которым я провожу людей лично.
+У каждой уже есть первые заработки (спасибо, Оля, Ира, Аня).
+Ты можешь быть следующей.
+
+Три профессии. Одна — твоя. Узнай какая → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-14')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-14', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">15 / 84</span>
+    </div>
+    <div class="card-title">Кейс Оли: из бухгалтера — в менеджера WB за 5 недель</div>
+    <div class="card-body" id="b-15">1/7
+Оля работала бухгалтером.
+11 лет. На найме. С зарплатой, которую даже не буду называть (обидно).
+Потом декрет.
+И тишина.
+Муж говорил: «Всё окей, я же работаю.» Но Оля знала — это не окей.
+
+2/7
+Когда я познакомилась с Олей, она была в точке отчаяния.
+Не то чтобы до слёз. Просто — выключена.
+«Я бухгалтер. Я ничего больше не умею.»
+Я спросила: «А ты умеешь считать и читать инструкции?»
+Она посмотрела странно.
+
+3/7
+Я рассказала ей про маркетплейсы.
+Про аналитику товаров, про коэффициенты, про то, как хороший менеджер зарабатывает больше любого генерального директора.
+Оля слушала и кивала: «Это же как бухгалтерия, но для товаров.»
+Я ответила: «Точно.»
+
+4/7
+Первая неделя.
+Оля создала аккаунт, начала разбираться в аналитике.
+Волновалась: «А вдруг я что-то не так сделаю?»
+Я ответила то, что говорю всегда: «Ты не сломаешь маркетплейс. Худшее — это удалить товар и создать новый.»
+Она вздохнула с облегчением.
+
+5/7
+Вторая неделя.
+Оля уже составляет описания, смотрит конкурентов, тестирует цены.
+Третья неделя — первый заказ!
+Четвёртая — второй и третий.
+Пятая неделя: Оля подсчитала. 47 тысяч рублей.
+За месяц. Работая 2-3 часа в день.
+
+6/7
+«Наталья, это какой-то сон,» — сказала Оля.
+«Нет,» — ответила я. «Это просто навык, который ты освоила в пять недель.»
+Потому что Оля не была гением.
+Она была бухгалтером, которая очень хорошо считает и не боится читать инструкции.
+Больше — ничего не было нужно.
+
+7/7
+Это не про Олю.
+Это про то, что твой опыт в одной области часто переносится в другую.
+Я не говорю: «Все станут бухгалтерами маркетплейсов.»
+Я говорю: «Твой опыт — это уже 50% успеха.»
+Остальное — техника.
+
+Есть вопросы? Задай их мне напрямую → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-15')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-15', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">16 / 84</span>
+    </div>
+    <div class="card-title">Финансовая независимость — не про миллионы</div>
+    <div class="card-body" id="b-16">1/7
+Я не буду говорить про миллионы.
+Потому что миллионы — это лотерея, везение, правильное время и место.
+А я про другое.
+Я про то, чтобы ты могла выключить свет в комнате и не волноваться о счётах.
+
+2/7
+Финансовая независимость начинается не с миллионов.
+Она начинается с того, чтобы ты зарабатывала больше, чем потребляешь.
+Чтобы у тебя была подушка на 3 месяца жизни.
+Чтобы у тебя была возможность сказать: «Нет» тому человеку или работе, которые тебя выжимали досуха.
+
+3/7
+Я вышла из декрета на 28К.
+Это было ничего — меньше, чем была на найме до беременности.
+Но это были МОИ 28К.
+Я их зарабатывала. Я их могла потратить. Я была в них свободна.
+Потом 40К. Потом 60К. Потом 100К.
+Но финансовая независимость произошла раньше, чем 100К.
+
+4/7
+Финансовая независимость — это не цель.
+Это побочный эффект от того, что ты овладеваешь навыком, который ценится на рынке.
+И когда ты это понимаешь, всё меняется.
+Потому что ты не гонишься за деньгами.
+Ты гонишься за мастерством.
+
+5/7
+Мастерство приносит деньги.
+Мастерство в менеджменте маркетплейсов может принести 47К за месяц (спасибо, Оля).
+Мастерство в копирайтинге может принести 55К (спасибо, Ира).
+Мастерство в управлении соцсетями может принести 12К (спасибо, Аня).
+Это не миллионы. Это стабильность.
+
+6/7
+А потом — о ужас! — ты понимаешь, что можешь выбирать.
+Ты скажешь: «Я буду работать с Оксаной, потому что её проект интересует меня, а не потому что у неё больше денег.»
+Ты выключишь рабочий чат в 8 вечера и пойдёшь танцевать (я это делаю).
+Ты возьмёшь неделю отпуска, потому что хочешь, а не потому что начальник разрешил.
+
+7/7
+Не миллионы.
+Не иллюзия.
+Просто: независимость.
+Способность жить по своим правилам.
+Это стоит любого количества денег.
+
+Если откликнулось — напиши мне → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-16')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-16', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">17 / 84</span>
+    </div>
+    <div class="card-title">"Мне уже 38. Поздно." — Нет.</div>
+    <div class="card-body" id="b-17">1/7
+Ира пришла ко мне с этой фразой.
+«Наталья, мне 38. Я уже 10 лет SMM-менеджер. Я устала от найма. Но я же старая для переучивания?»
+Я смотрела на неё и думала: это один из самых частых страхов, которые я слышу.
+И самый неправдивый.
+
+2/7
+Ире 38.
+Она работала в найме SMM-менеджером.
+Зарплата 38К.
+И она думала, что если не научится чему-то новому в 25 лет, то уже никогда.
+(Это называется: ты купила историю о том, что перемены — это для молодых.)
+
+3/7
+Я рассказала ей про нейропластичность.
+Не научным языком. Просто: мозг учится в любом возрасте.
+Ира усмехнулась: «Наталья, это звучит как психология из инстаграма.»
+Я ответила: «Может быть. Но Оля тоже думала, что уже поздно. Смотри, как она растёт.»
+
+4/7
+Мы выбрали направление.
+Ира уже была немного SMM-менеджером, поэтому я предложила: а если ты станешь копирайтером-фрилансером?
+Это примерно то же самое (работа с текстом, понимание аудитории), но без всего ненависти (босс, отчёты, meeting на meeting).
+
+5/7
+Первый месяц.
+Ира пишет. Медленно, но честно.
+Второй месяц: первый клиент! (Зарплата на найме разовая за месяц.)
+Третий месяц: три клиента. 47 постов. 55К.
+Ей 38 лет.
+Она жалко посмотрела на свою бывшую зарплату в 38К.
+
+6/7
+«А почему я раньше не попыталась?» — спросила Ира.
+Я ответила: «Потому что ты верила в сказку про то, что ты уже старая.»
+Это не моя история. Это твоя история.
+Кому из нас в 38 надо учиться? Отчёту и начальнику? Или себе?
+
+7/7
+Если тебе кажется, что ты уже старая — это просто, означает, что ты просто не пробовала.
+Мне 35 (и я танцую на чемпионатах, кстати).
+Ире 38 (и она зарабатывает 55К без начальника).
+Возраст — не причина. Это оправдание.
+
+Хочешь разобраться, с чего начать? → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-17')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-17', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">18 / 84</span>
+    </div>
+    <div class="card-title">Что я делаю, когда ученица не справляется</div>
+    <div class="card-body" id="b-18">1/7
+Когда ученица говорит: «Наталья, у меня не получается,» — я не говорю: «Продолжай, ты можешь.»
+Я не дам ей розовый сахар.
+Я сделаю то, что называется: иду рядом.
+
+2/7
+Сначала я слушаю.
+Реально слушаю. Не думаю про следующий ответ.
+Я жду, пока девочка расскажет, что именно не получается.
+Часто это не про технику.
+Часто это про страх. Или усталость. Или неверие в себя.
+
+3/7
+Потом я показываю ей примеры её же работы.
+«Смотри, вот неделю назад ты писала вот так. А сейчас вот так.» Обычно глаза округляются: «Ого, действительно!»
+Потому что люди забывают, откуда они начали.
+А с другого берега часто не видно, как ты растёшь.
+
+4/7
+Потом я разбиваю проблему на кусочки.
+Если не получается писать пост целиком — пишем только хук.
+Если не получается хук — пишем одну строчку.
+Если не получается одна строчка — говорим: может быть, сегодня день, чтобы отдохнуть?
+Я не тяну. Не давлю.
+
+5/7
+И очень важное.
+Если ученица честно говорит: «Это не мой путь» — я её отпускаю.
+Как я отпустила Катю.
+Потому что насилие над собой не создаёт успех.
+Создаёт депрессию.
+И я это видела слишком много раз.
+
+6/7
+Но большинство девочек не уходят.
+Они просто нужна небольшая пауза и переформулировка задачи.
+Потом — снова вперёд.
+И через месяц они говорят: «Наталья, спасибо. Я бы не верила, что смогу.»
+А я отвечаю: «Ты могла. Я просто не позволила тебе остановиться.»
+
+7/7
+Это мой метод.
+Я не guru, который кричит: «Верь в себя!»
+Я рядом. Я слушаю. Я показываю прогресс. Я отпускаю, если надо.
+И я жду, пока ты разберёшься, что ты можешь.
+
+Три профессии. Одна — твоя. Узнай какая → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-18')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-18', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">19 / 84</span>
+    </div>
+    <div class="card-title">Как я сама выбралась из долгов в декрете</div>
+    <div class="card-body" id="b-19">1/7
+Москва. 2019. Я в декрете.
+Ипотека на квартиру. Кредит на ремонт. Маленький ребёнок.
+Муж работает. Но даже вместе денег не хватает.
+Я помню, как считала: сколько денег на памперсы? На молоко? На электричество?
+Это был ад.
+
+2/7
+Я помню конкретный день.
+Сидела в тёмной комнате (чтобы не расходовать электричество) и искала в интернете: «Как зарабатывать с телефона?»
+Нашла кучу мусора. Курсы за 3К, которые говорили: купи мой курс и станешь миллионером.
+(Спойлер: не стану.)
+
+3/7
+Я начала просто писать.
+Статьи на фрилансе. За 500 рублей.
+Это было смешно. Это было тяжело. Я писала ночью, когда малыш спал.
+Но это было МОЁ.
+И это был мой путь из ямы.
+
+4/7
+Параллельно я ошибалась.
+Купила курс по Python (потому что программисты — это богатые люди).
+Потратила 2 недели на изучение. Поняла, что я не программист.
+Скачала курс по копирайтингу. Писала посты для знакомых за деньги (не помню какие).
+Потом нашла маркетплейсы.
+
+5/7
+Каждая ошибка — это был гвоздь.
+Но они сбивали мне мозаику.
+Я поняла: я люблю писать. Я понимаю людей. Я могу помочь малому бизнесу.
+Значит — копирайтинг + SMM.
+Значит — я могу учить других.
+
+6/7
+За 3 года я выросла с 500 рублей за статью до 100К+ удалённо.
+Никакого волшебства.
+Просто: пробовала, ошибалась, училась, растила мастерство.
+И долги? Они ушли на ходу.
+Сначала я расплатилась с кредитом на ремонт.
+Потом с телефонами.
+Потом ипотека перестала быть кошмаром.
+
+7/7
+Я рассказываю это не про себя.
+Я рассказываю это про то, что путь из ямы существует.
+И часто он начинается не с большого решения.
+А с маленького: сегодня я попробую писать.
+Сегодня я посмотрю видео про маркетплейсы.
+Сегодня я напишу боту.
+
+Есть вопросы? Задай их мне напрямую → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-19')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-19', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">20 / 84</span>
+    </div>
+    <div class="card-title">Почему я не инфоцыганка</div>
+    <div class="card-body" id="b-20">1/7
+Я не обещаю гарантии.
+Никогда.
+Если кто-то в интернете говорит: «Купи мой курс, и ты заработаешь 100К в месяц» — это врёшь.
+Это не гарантия. Это ловушка.
+И я знаю, потому что я попадалась в эту ловушку.
+
+2/7
+Инфоцыганка — это тот, кто говорит:
+«Это не про работу, это про веру в себя.»
+«Ты будешь богата, если перепрограммируешь мозг.»
+«Если не получилось — это потому что ты не верила достаточно.»
+Я не говорю такое.
+Потому что это — манипуляция.
+
+3/7
+Я говорю:
+«Это сложно.»
+«Ты будешь ошибаться.»
+«Может быть, это не твой путь.»
+«Это потребует времени и честной работы.»
+Это не звучит как продающее письмо, правда?
+Правда. Потому что это не письмо. Это реальность.
+
+4/7
+Инфоцыганка скрывает неудачи.
+Я показываю Катю.
+Инфоцыганка врёт про свой доход.
+Я говорю: 100К, но это после 3 лет работы, не после 3 недель.
+Инфоцыганка продаёт мечту.
+Я продаю навык.
+
+5/7
+И вот в чём разница:
+Мечта испаряется в сложный момент.
+Навык остаётся.
+Если у тебя есть навык менеджмента маркетплейсов, его никто не отберёт.
+Если у тебя есть навык копирайтинга, ты будешь зарабатывать, даже если рынок упадёт.
+Это страховка, а не лотерея.
+
+6/7
+Я не говорю: трансформация, успех, инвестиции в себя, мамочки.
+Я говорю: навык, деньги, независимость, забота.
+Я не создаю иллюзию.
+Я создаю людей, которые знают, как работает система, и могут в ней зарабатывать.
+
+7/7
+Быстрых рецептов нет.
+Но есть кнопка работы.
+Есть кнопка учебы.
+Есть кнопка ошибок и исправления.
+И есть кнопка выхода из ямы.
+Я показываю ее. И жди, как ты нажимаешь.
+
+Если откликнулось — напиши мне → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-20')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-20', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="threads">
+    <div class="card-header">
+        <span class="badge badge-threads">Threads</span>
+        <span class="card-num">21 / 84</span>
+    </div>
+    <div class="card-title">Один вечер, который изменил все</div>
+    <div class="card-body" id="b-21">1/7
+Был обычный вечер.
+Я танцевала в студии (да, я это делаю после работы).
+И ко мне подошла девочка: «Наталья, я знаю тебя из интернета. Я в декрете. Может, ты меня научишь?»
+Я посмотрела на неё и подумала: вот она. Вот момент, когда всё меняется.
+
+2/7
+Не потому что она купит мой курс.
+Не потому что она станет моей ученицей.
+А потому что она СПРОСИЛА.
+Она вышла из дома с вопросом: может ли мне кто-то помочь найти путь?
+И это был самый важный вопрос.
+
+3/7
+Потому что путь ищут не в интернете.
+Его ищут в себе.
+А интернет — это просто инструмент, чтобы найти человека, который покажет, где искать.
+Я не гуру. Я просто женщина, которая нашла три способа зарабатывать.
+И я делюсь ими.
+
+4/7
+И если ты читаешь это сейчас, и ты в декрете, и ты считаешь памперсы, и ты хочешь независимости —
+это не случайность.
+Это означает, что ты уже вышел из комнаты с вопросом.
+Это означает, что ты готова к изменениям.
+
+5/7
+Я предлагаю четыре варианта:
+Быстрый старт (1990₽) — это основы одной профессии.
+Система (7990₽) — это стройная система из 3 профессий.
+Рост (14990₽) — это система + поддержка на месяц.
+Премиум (24990₽) — это полная сопровождение 3 месяца.
+
+6/7
+Но важное не в цене.
+Важное в том, что ты начнёшь.
+Может быть, в этот вечер ты напишешь первый пост.
+Может быть, завтра ты создашь аккаунт на маркетплейсе.
+Может быть, в понедельник ты напишешь мне и скажешь: я готова.
+
+7/7
+Один вечер.
+Один вопрос.
+Одно решение.
+Может изменить всё.
+Как это произошло со мной. И с Олей. И с Ирой. И с Аней.
+А может быть, следующая — это ты.
+
+Хочешь разобраться, с чего начать? → t.me/andronova_nata_bot</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-21')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-21', this)">Развернуть</button>
+    </div>
+</div>
+
+<!-- ==================== REELS (10) ==================== -->
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">22 / 84</span></div><div class="card-title">Reels #1 — Личная история: точка А</div><div class="card-body" id="b-22">Хук: «Год назад я сидела в темноте на кухне и считала долги.»
+Хронометраж: ~50 сек
+
+Год назад я сидела в темноте на кухне и считала долги. Ребёнок уснул. Муж на работе. Ипотека, кредитка, ремонт. Москва. Без родных. Один и тот же день. Каждый день.
+
+Я не блогер с идеальной жизнью. И не эксперт с громкими регалиями. Я мама, которая в какой-то момент поняла: я перестала расти. Не потому что плохо. А потому что всё одинаково.
+
+Я начала искать. Покупала курсы. Ошибалась. Сомневалась. Работала на других — поняла, что снова на дядю, только из дома.
+
+А потом нашла то, что работает. И пока училась — уже зарабатывала.
+
+Сейчас у меня больше ста тысяч в месяц. Удалённо. Со своего телефона. Я закрыла долги. Снова танцую. Путешествую. И чувствую себя живой.
+
+Не расскажу тебе, что будет легко. Расскажу, что будет честно. Подпишись на канал — там вся правда.</div><div class="card-cta">CTA: Подпишись — t.me/andronova_nata</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-22')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-22', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">23 / 84</span></div><div class="card-title">Reels #2 — Боль декрета</div><div class="card-body" id="b-23">Хук: «Знаешь, что самое тяжёлое в декрете? Не ребёнок.»
+Хронометраж: ~45 сек
+
+Знаешь, что самое тяжёлое в декрете? Не ребёнок. Не бессонные ночи. Не каши эти бесконечные.
+
+Самое тяжёлое — просить. На продукты. На колготки. На кофе. Хочу кофе — не спрашивая. Казалось бы мелочь. Но именно в этом — всё.
+
+Ты вроде взрослый человек. С образованием. С опытом. Но ты финансово зависишь. И это давит. Тихо, каждый день, изнутри.
+
+Я была в этой точке. И я знаю: дело не в муже. Он может быть нормальным. Дело в ощущении, что ты перестала быть собой.
+
+У меня ушло два месяца, чтобы начать зарабатывать из дома. Между детским сном и ужином. Без офиса. Без начальника.
+
+Если узнаёшь себя — подпишись. Расскажу как это устроено. Без пафоса, без обещаний миллионов.</div><div class="card-cta">CTA: Подпишись — t.me/andronova_nata</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-23')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-23', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">24 / 84</span></div><div class="card-title">Reels #3 — «Мне поздно начинать»</div><div class="card-body" id="b-24">Хук: «Мне в 38 сказали: поздно. Через полгода — 55 тысяч на карте.»
+Хронометраж: ~40 сек
+
+Мне в 38 сказали: поздно. Через полгода — 55 тысяч на карте.
+
+Это Ира, Москва. Пришла ко мне и сказала ровно это — мне поздно, молодые быстрее. Сейчас у неё стабильные 55 тысяч. Удалённо.
+
+Этот голос в голове — «поздно» — он врёт. Он говорил тебе это и в 30, и в 25. Он будет говорить и в 40. Его работа — держать тебя на месте.
+
+А знаешь что реально поздно? Ещё 30 лет вот так. Вот это — поздно.
+
+Начни тихо. Результат убеждает лучше слов. Ссылка в шапке.</div><div class="card-cta">CTA: Ссылка в шапке профиля</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-24')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-24', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">25 / 84</span></div><div class="card-title">Reels #4 — Страх потерять деньги на курсе</div><div class="card-body" id="b-25">Хук: «Я уже обжигалась на курсах. Не один раз.»
+Хронометраж: ~50 сек
+
+Я уже обжигалась на курсах. Не один раз. Поэтому я понимаю скептицизм. Курсов много. Все обещают. Мало кто делает.
+
+Мне было страшно. Да, да страшно — я не один раз уже обжигалась. Покупала. Проходила неделю. Бросала. Или проходила полностью — а толку ноль.
+
+И я не буду говорить, что у меня по-другому, потому что я особенная. Скажу другое.
+
+Вход — 1990 рублей. Это не сто тысяч. Это два похода в кофейню. На эти деньги ты получаешь задачи, которые можно делать сразу, и начинаешь зарабатывать, пока учишься.
+
+Волшебной кнопки не бывает. Это уже пройдено. Но 1990 — это не та сумма, из-за которой стоит бояться. Это та сумма, после которой стоит попробовать.
+
+Ссылка в шапке. Посмотри, что внутри. Просто посмотри.</div><div class="card-cta">CTA: Ссылка в шапке профиля</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-25')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-25', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">26 / 84</span></div><div class="card-title">Reels #5 — Реальные цифры учениц</div><div class="card-body" id="b-26">Хук: «Бухгалтер из Самары. 5 недель. 47 тысяч. Как?»
+Хронометраж: ~45 сек
+
+Бухгалтер из Самары. 5 недель. 47 тысяч. Как?
+
+Оля. Работала в офисе. Не умела продавать. Прошла обучение, запустила два магазина на Wildberries. 47 тысяч за пять недель. Аня из Екатеринбурга — 32 тысячи, три клиента за месяц на копирайтинге.
+
+Я не говорю «ты заработаешь миллион». Я говорю: 3 400 выпускниц прошли этот путь. 7 из 10 — с результатом. Средний диапазон — от 20 до 55 тысяч.
+
+Это не миллион. Но это — своё. Твоя карта. Твоя подушка.
+
+Для кого-то 30 тысяч — это мелочь. А для мамы в декрете, которая год просила на колготки — это другая жизнь.
+
+Напиши мне в бота — расскажу подробнее.</div><div class="card-cta">CTA: Напиши в бота — t.me/nataliya_andronova_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-26')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-26', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">27 / 84</span></div><div class="card-title">Reels #6 — Почему 3 из 10 НЕ получают результат</div><div class="card-body" id="b-27">Хук: «Не все мои ученицы зарабатывают. Вот правда.»
+Хронометраж: ~50 сек
+
+Не все мои ученицы зарабатывают. Вот правда. 7 из 10 — с результатом. 3 — нет. И я расскажу почему.
+
+Катя из Новосибирска. Пришла на обучение. Бросила на третьей неделе. Не потому что плохая. Не потому что глупая. Просто — не дошла.
+
+Я не тяну. Не давлю. Я просто показываю реальность. Инструменты даю. Поддержку даю. Отвечаю лично, пишу до полуночи. Но делать — только ты.
+
+Те, кто не получает результат — чаще всего не доходят. Начинают, вдохновляются, а потом быт затягивает. И я это понимаю. Потому что сама через это прошла.
+
+Но если ты из тех, кто дойдёт — семь из десяти дошли. И каждая из них когда-то тоже сомневалась.
+
+Я не продаю иллюзии. Я даю систему. А дальше — ты.</div><div class="card-cta">CTA: Ссылка в шапке профиля</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-27')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-27', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">28 / 84</span></div><div class="card-title">Reels #7 — «Муж против»</div><div class="card-body" id="b-28">Хук: «Муж говорит: зачем тебе это, сиди дома.»
+Хронометраж: ~50 сек
+
+Муж говорит: зачем тебе это, сиди дома. Знакомо?
+
+Света из Краснодара. Пришла ко мне — муж был категорически против. Говорил: опять курсы, опять деньги на ветер. И знаешь — я его понимаю. Он видел, как она покупала что-то раньше. Видел, что не работало. Он защищал семейный бюджет.
+
+Света не стала спорить. Не стала доказывать. Просто попробовала. По часу в день.
+
+Через два месяца — 40 тысяч на своей карте. Муж стал фанатом. Не потому что она его убедила словами. А потому что результат убеждает лучше слов.
+
+Не надо воевать. Не надо ставить ультиматумы. Начни тихо. Покажи цифру. Всё остальное — приложится.
+
+И если муж спросит «что это за курс за 1990» — скажи: «два кофе. Дай мне попробовать.»</div><div class="card-cta">CTA: Подпишись — t.me/andronova_nata</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-28')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-28', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">29 / 84</span></div><div class="card-title">Reels #8 — День из жизни: работа из дома</div><div class="card-body" id="b-29">Хук: «Мой рабочий день — 3 часа. С телефона. Между завтраком и садиком.»
+Хронометраж: ~45 сек
+
+Мой рабочий день — 3 часа. С телефона. Между завтраком и садиком.
+
+Утро — ребёнок в садик. Я варю кофе. Сажусь с телефоном. Не в офис. Не в метро. На свой диван.
+
+Час-полтора — работа. Ответы ученицам. Проверка заданий. Текст для клиента, если есть. Перерыв. Обед. Потом ещё час вечером, когда все поулеглись.
+
+Всё. Три часа. Со своего телефона. Без будильника на 6:30. Без начальника, который пишет в выходные.
+
+Я не сижу в ноутбуке по 12 часов. Это не корпорация. Это навык, который ты один раз освоила — и он с тобой. Как вождение. Не забудешь.
+
+Кому-то нужен офис и карьера. А кому-то — вот это. Тишина, кофе и свои деньги. Если второе — подпишись.</div><div class="card-cta">CTA: Подпишись — t.me/andronova_nata</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-29')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-29', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">30 / 84</span></div><div class="card-title">Reels #9 — Первый заработок ученицы</div><div class="card-body" id="b-30">Хук: «Она скинула скрин и написала: Наташ, это реально мои деньги?»
+Хронометраж: ~45 сек
+
+Она скинула скрин и написала: Наташ, это реально мои деньги?
+
+Марина. 35 лет. Воронеж. Пришла ко мне со словами «жалею что не раньше». Через шесть недель — 28 тысяч.
+
+28 тысяч — это не миллион. Но ты бы видела её сообщение. Она плакала. Не от суммы. От того, что это — её. Не мужа. Не родителей. Её деньги, которые она заработала сама, пока ребёнок спал.
+
+Я помню своё первое. То же самое чувство. Когда ты смотришь на экран и думаешь: подожди, это я сделала? Серьёзно?
+
+И потом ты идёшь и покупаешь себе что-то. Не спрашивая. Не оправдываясь. Просто потому что можешь.
+
+Вот ради этого момента — всё. Ссылка в шапке.</div><div class="card-cta">CTA: Ссылка в шапке профиля</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-30')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-30', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="reels"><div class="card-header"><span class="badge badge-reels">Reels</span><span class="card-num">31 / 84</span></div><div class="card-title">Reels #10 — Почему 1990 — не развод</div><div class="card-body" id="b-31">Хук: «1990 рублей за курс. Подозрительно дёшево, да?»
+Хронометраж: ~45 сек
+
+1990 рублей за курс. Подозрительно дёшево, да? Понимаю. Обычно за такие деньги дают PDF на три страницы и говорят «удачи».
+
+Я сама была мамой, которая считала каждую тысячу. Если бы мне сказали «отдай 200 тысяч за Skillbox» — я бы закрыла вкладку.
+
+1990 — это порог, через который может пройти любая. Внутри — не мотивашка. Внутри задачи. Ты их делаешь — и уже зарабатываешь пока учишься.
+
+Я знаю, каково это — бояться потратить последнее на очередное обещание. Поэтому вход такой. Я не обещаю. Я даю инструмент. Проверь сама.
+
+Напиши в бота — покажу что внутри.</div><div class="card-cta">CTA: Напиши в бота — t.me/nataliya_andronova_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-31')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-31', this)">Развернуть</button></div></div>
+
+<!-- ==================== VK (11) ==================== -->
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">32 / 84</span></div><div class="card-title">Как я из дня сурка в декрете дошла до 100К удалённо</div><div class="card-body" id="b-32">Три года назад я считала копейки на памперсы и не знала, смогу ли заплатить за электричество. Сейчас я зарабатываю 100К+ удалённо и танцую на чемпионатах. Но начиналось всё не так красиво.
+
+Москва, ипотека, долги по кредитам, третий год в декрете. За окном темно, на улице минус. И мысль: «Что-то надо менять. Но я же ничего не умею».
+
+Я была такой. Декрет высосал все силы — не финансовые, а эмоциональные. Я зависела от мужа в каждой копейке. И это было унизительно.
+
+Но потом я обнаружила простую истину: удалённую профессию можно освоить без опыта. За 4-6 недель. Не нужен диплом, не нужны годы в офисе. Нужны два условия: желание и правильный путь.
+
+Я выбрала менеджмент маркетплейсов. Первый месяц училась, второй месяц работала как сумасшедшая. К концу второго месяца у меня было 15К. Потом 30К. Потом 50К. Потом 100К.
+
+А сейчас я куратор для тех, кто в декрете, в декрете психологическом, или просто устал от офиса. Показываю, как три профессии — менеджер маркетплейсов, копирайтер, администратор соцсетей — это не гарантия успеха, а шанс.
+
+Люди говорят: «Наталья, а можно ли?» Я отвечаю: «Можно. И вот как».
+
+Мне это удалось не потому, что я гений. А потому, что я прошла путь и знаю, где прячутся грабли. И я хочу, чтобы вы их избежали.
+
+Итак. Если вы здесь — значит, что-то щёлкнуло. Может быть, вы в декрете, может быть, вы устали от зарплаты, может быть, вам нужна свобода. Я была такой же.
+
+Если вас интересует конкретный маршрут — пишите мне в бот. Я расскажу, как это работает.</div><div class="card-cta">CTA: Интересно? Напишите мне в бот → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-32')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-32', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">33 / 84</span></div><div class="card-title">3 профессии которые можно освоить за 4-6 недель с телефона</div><div class="card-body" id="b-33">«Наталья, мне что — три года учиться, прежде чем хоть рубль заработаю?» Нет. Четыре-шесть недель. И вот почему.
+
+Эти три профессии — реальный старт, а не "в теории когда-нибудь":
+
+1. Менеджер маркетплейсов (WB, Ozon, Яндекс.Маркет)
+
+Что вы делаете: работаете с карточками товаров, добавляете фото, описания, ключевые слова. Отслеживаете статистику и цены. Вы — диспетчер информации.
+
+Сложность: низкая. Всё интуитивно.
+
+Заработок за 5-6 недель: от 15К до 50К в первый месяц работы.
+
+2. Копирайтер
+
+Что вы делаете: пишете для интернета. Посты, описания товаров, письма рассылок, копии на сайтах.
+
+Сложность: средняя. Нужно творчество, но и формулы есть.
+
+Заработок за 5-6 недель: от 20К до 40К.
+
+3. Администратор соцсетей
+
+Что вы делаете: публикуете посты, отвечаете на комментарии, следите за реакциями людей, делаете отчёты.
+
+Сложность: низкая-средняя. Логика и здравый смысл.
+
+Заработок за 5-6 недель: от 15К до 35К.
+
+Почему именно 4-6 недель? Потому что первую неделю вы учитесь основам. Вторую — практикуетесь. С третьей недели вы уже можете начать реальную работу и зарабатывать.
+
+Это не «обещание быстрых денег». Это просто реальность: эти профессии не требуют опыта, диплома или потрясающего таланта.
+
+Требуют интернета, времени и желания.</div><div class="card-cta">CTA: Какая профессия вам ближе? Пишите в бот → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-33')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-33', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">34 / 84</span></div><div class="card-title">Оля: была бухгалтером — стала менеджером WB. 47К за 5 недель</div><div class="card-body" id="b-34">47 тысяч за пять недель — и это бывший бухгалтер, которая год назад не знала, что такое карточка товара. Оля, 31 год, подмосковье, двое детей. Оклад в офисе 40К за 8 часов в пробках.
+
+Она сказала: «Наталья, может ли бухгалтер заработать на маркетплейсах? Я же ничего про товары не знаю». Я ответила: «Наоборот. Твой минус — плюс».
+
+Неделя 1: Онбординг. Разобрали интерфейс WB. За три дня Оля уже знала, где что лежит.
+
+Неделя 2: Первый товар. Её бухгалтерский подход к деталям сыграл ей на руку. На конец второй недели: 15К.
+
+Неделя 3-4: Масштаб. Анализировала, какие описания приводят больше кликов. На конец недели 3 — 28К, на конец недели 4 — 41К.
+
+Неделя 5: Финиш. Добавила пятого клиента, отдала часть работы выполнителю. На конец недели 5: 47К.
+
+Через три месяца — 70К. Через полгода — 95К.
+
+Что произошло? Не алхимия. Просто логика: бухгалтерский ум → внимание к деталям → хорошие описания → люди покупают.
+
+«Я думала, что мне нужен опыт в интернет-торговле. На самом деле, мне нужна была логика. А она у меня была».</div><div class="card-cta">CTA: Вы похожи на Олю? Пишите в бот → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-34')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-34', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">35 / 84</span></div><div class="card-title">"У меня не получится" — история Кати. Честно.</div><div class="card-body" id="b-35">Вы ждёте, что я вам скажу, что все мои клиенты зарабатывают? Я вам скажу честно: нет.
+
+Катя — это история, которую я рассказываю в первую очередь новичкам. Потому что это правда.
+
+Катя пришла ко мне 28 лет, без опыта в интернете, но с желанием. Первую неделю она всё делала правильно.
+
+Вторую неделю — жизнь вмешалась. Сломалась стиральная машина, ребёнка нужно было возить к врачу.
+
+Третью неделю — что-то не кликалось. Клиенты говорили: «Нет, так не подойдёт».
+
+На четвёртую неделю она написала: «Наталья, у меня не получается.»
+
+Я спросила: «А ты сколько часов в неделю вложила?» Ответ: от 5 до 10 часов вместо запланированных 20.
+
+Катя подумала и решила: не будет. Она сказала, что не может выделить нужное количество часов. И это правильное решение.
+
+Я не гуру, который говорит, что все добиваются успеха. Я куратор, который видит, что не все добиваются. Но те, кто добивается, — они не гении. Они просто решили: я выделю время и буду делать.
+
+Я спрашиваю вас прямо: у вас есть 20-25 часов в неделю?</div><div class="card-cta">CTA: Вы готовы выделить время? Тогда напишите мне → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-35')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-35', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">36 / 84</span></div><div class="card-title">Сколько реально зарабатывают на удалёнке в 2026</div><div class="card-body" id="b-36">Окей, хватит истории. Давайте цифры. Только о том, что вижу сама, у своих людей.
+
+Менеджер маркетплейсов:
+- Первый месяц: 10К – 30К
+- Второй-третий: 30К – 60К
+- Через полгода: 50К – 100К+
+
+Копирайтер:
+- Первый месяц: 5К – 20К
+- Второй-третий: 20К – 40К
+- Через полгода: 40К – 80К+
+
+Администратор соцсетей:
+- Первый месяц: 8К – 20К
+- Второй-третий: 20К – 40К
+- Через полгода: 35К – 70К+
+
+Наши люди часто комбинируют. Начинают с менеджмента маркетплейсов, потом добавляют администрирование соцсетей. Доход растёт быстрее.
+
+Что влияет на доход? 1. Скорость — 25+ часов в неделю = 2-3x рост. 2. Качество — довольный клиент приведёт двух новых. 3. Клиенты — ищите тех, кто ценит результат. 4. Вера в процесс — не сдаётесь на третьей неделе.
+
+Реалистичный сценарий: Месяц 1: 15К → Месяц 2-3: 30К-40К → Месяц 4-6: 50К-70К → Месяц 7-12: 70К-100К.
+
+Важно: гарантий нет. Я показываю путь, дать инструменты, рассказать про ловушки. Но результат зависит от вас. Честно.</div><div class="card-cta">CTA: Интересуют конкретные цифры под вашу ситуацию? → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-36')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-36', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">37 / 84</span></div><div class="card-title">Ира, 38 лет: "Думала поздно. В самый раз."</div><div class="card-body" id="b-37">Ира пришла ко мне с одним предложением в голове: «Наталья, мне уже 38. Я поздно?»
+
+Я ответила: «Ты в самый раз».
+
+Ира 15 лет работала в HR. Уютный офис, уютная зарплата (55К), уютная депрессия. В 38 лет она поняла, что офис её убивает медленно.
+
+Она написала мне: «У меня нет молодости. Это мой минус?»
+
+Я спросила: «А преимущества какие?» Ответ: опыт общения с людьми, понимание психологии, дисциплина, стабильность.
+
+Я сказала: «Это не минусы. Это основа для администратора соцсетей.»
+
+Неделя 1-2: Первые страхи. «Я не понимаю алгоритмы.» Я сказала: «Смотри на людей. Задай тот же вопрос: что хотят люди?»
+
+Первый месяц: 18К. Месяц 2: 38К. Месяц 3: 45К, месяц 4: 55К.
+
+Сейчас: 55К+. Работает с пятью клиентами, 25-30 часов в неделю.
+
+Она говорит: «Я думала, я поздно. На самом деле, я пришла в самый раз. В 38 я знаю, что такое работа, знаю, что такое клиент.»
+
+Возраст — это не минус. Это преимущество. Менеджеры в 40 работают лучше, чем в 20. Копирайтеры в 45 пишут острее. Администраторы соцсетей в 50 понимают аудиторию глубже.</div><div class="card-cta">CTA: Вы 35+? Напишите мне, покажу как Ира → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-37')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-37', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">38 / 84</span></div><div class="card-title">Света начала тайно от мужа. Сейчас он её главный фанат</div><div class="card-body" id="b-38">Света пришла ко мне скрытничком. Она написала в бот: «Наталья, можно ли начать работу тайно от мужа? Я не хочу разочаровывать его, если не получится».
+
+Я ответила: «Можно. Но лучше не надо».
+
+Свете было 33 года, она в браке 7 лет. Муж зарабатывает нормально (70К), но Свете хотелось своих денег. И своей жизни вне дома. Но она боялась.
+
+Я сказала: «Начни. Но будь честна с мужем. Скажи ему: я хочу попробовать.»
+
+Муж сказал: «Окей. Давай пробовать. Но если будет хаос в доме, остановим». И знаете что? Хаоса не было.
+
+Месяц 1: Света заработала 12К. Муж увидел цифры: «Вау. Ты же зарабатываешь!»
+
+Месяц 2: 32К, месяц 3: 40К. Муж теперь сам интересовался: «Свет, как у тебя дела?»
+
+Сейчас Света зарабатывает 40К+. У неё пять клиентов. Муж говорит: «Я горжусь тобой. Ты не просто сидишь дома. Ты создаёшь.»
+
+Света боялась, что её попытка разочарует мужа. Вместо этого — его вдохновила. Потому что она была честна, доказала делом, и не просила много.
+
+Ваше желание что-то менять — это не угроза семье. Это сила.</div><div class="card-cta">CTA: Вы боитесь, что не поддержат? Напишите мне → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-38')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-38', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">39 / 84</span></div><div class="card-title">Менеджер маркетплейсов: что делаешь и сколько платят</div><div class="card-body" id="b-39">Я часто слышу: «Менеджер маркетплейсов — это кто? Что он делает?»
+
+Менеджер маркетплейса — это диспетчер товара. У владельца магазина на Wildberries есть товары. И у него проблема: как сделать так, чтобы люди их нашли? Сюда приходите вы.
+
+Пример рабочего дня:
+09:00 – Открываете личный кабинет WB.
+09:15 – Статистика вчерашнего дня.
+09:30 – Добавляете новые товары (10-20 минут на товар).
+10:30 – Оптимизация старых товаров.
+11:30 – Анализ конкурентов.
+13:30 – Работа с ключевыми словами.
+14:30 – Отчёты и анализ.
+15:30 – Советы клиенту.
+16:30 – Конец работы.
+
+Сколько платят? Процент от дохода (10-20%) — самая честная модель. Если ваши товары генерируют 200К, вы берёте 20-40К. Фиксированная оплата: 25-30К/мес.
+
+Реальный пример: Месяц 1: 1 клиент, 15К. Месяц 2: 27К. Месяц 3: 42К. Месяц 4-6: 60-100К+.
+
+Требования: внимание к деталям, логика, усидчивость, честность. Больше ничего не нужно.</div><div class="card-cta">CTA: Интересует эта профессия? → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-39')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-39', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">40 / 84</span></div><div class="card-title">Почему я не обещаю миллионы. И почему это важно</div><div class="card-body" id="b-40">Я сразу скажу: я не буду вам обещать, что вы заработаете миллион.
+
+Реальный сценарий: Месяц 1: 15К. Месяц 2-3: 30-40К. Месяц 4-6: 50-70К. Месяц 7-12: 70-100К+.
+
+Это не скучно. Но это не миллион. Миллион — это годовой доход человека, который работал пять лет.
+
+Если я обещаю, я вру. И я этого не буду. Гуру говорит: «Я заработал 300К за месяц». Его ученик видит 10К и думает: «Он врал». На самом деле гуру просто забыл сказать, что он работает 10 лет.
+
+Реальность: не все добиваются результата. Катя не вложила времени. Кто-то сдался на третьей неделе.
+
+Правда: Удалёнка работает? Да. Это легко? Нет. Это быстро? Не очень. Это реально? Да. Это для всех? Нет. Для тех, кто вложит время.
+
+Я не обещаю результат. Я показываю путь. Это два разных вещи.</div><div class="card-cta">CTA: Вы готовы к правде? → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-40')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-40', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">41 / 84</span></div><div class="card-title">Если тебе кажется что пора что-то менять — тебе не кажется</div><div class="card-body" id="b-41">У вас было несколько мыслей на этой неделе. «Может быть, я попробую что-то новое». «Может быть, я начну работать удалённо». И потом вы закрыли эту мысль и вернулись к своим делам.
+
+Я здесь, чтобы сказать вам: не закрывайте.
+
+Это не тревога. Это сигнал. Когда вам кажется, что нужно что-то менять, это не просто мысль. Это ваш внутренний голос, который понимает, что что-то не совпадает.
+
+И правда такова: перемены начинаются не с готовности. Они начинаются с решения.
+
+Вот что происходит на самом деле: Вы ждёте идеального момента. Это никогда не придёт.
+
+Идеальный момент — это сейчас. Потому что сейчас у вас есть интернет и 25 часов в неделю.
+
+Вот что произойдёт, если вы начнёте: Неделя 1: покажется сложно. Неделя 2: что-то начнёт кликать. Неделя 3-4: первые деньги. Неделя 5-6: вы уже видите результаты.
+
+А если вы не начнёте? Месяц пройдёт. Ничего не изменится.
+
+Это не про деньги, это про свободу. Не про профессию, это про выбор.
+
+Оля это сделала. Ира это сделала. Света это сделала.
+
+Но не завтра. Не в понедельник. Сегодня.
+
+Потому что если вам кажется, что пора что-то менять — тебе не кажется. Ты знаешь. Просто не веришь в себя ещё. Я помогу.</div><div class="card-cta">CTA: Напишите мне в бот. Прямо сейчас → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-41')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-41', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="vk"><div class="card-header"><span class="badge badge-vk">VK</span><span class="card-num">42 / 84</span></div><div class="card-title">Сколько стоит, что внутри, и почему я не скрываю цены (БОНУС)</div><div class="card-body" id="b-42">Я заметила, что люди боятся спрашивать про цену. Поэтому говорю открыто. Вот четыре тарифа, без подвохов.
+
+Быстрый старт — 1 990₽. Одно направление. Задачи, которые дают моментальный доход. Дешевле ужина в кафе. А навык останется навсегда.
+
+Система — 7 990₽. 18 профессий + куратор. Ты видишь всю картину и выбираешь то, что подходит именно тебе.
+
+Рост — 14 990₽ (самый популярный). 20+ направлений + куратор + месяц личной поддержки.
+
+Премиум — 24 990₽. 25+ направлений + личная работа со мной + куратор. Полное сопровождение 3 месяца.
+
+Что внутри: 14 видеоуроков по 15-30 минут. Практические задания на реальных примерах. Чат поддержки 24/7. Портфолио + понимание как искать клиентов.
+
+Что я НЕ обещаю: Конкретный доход. Миллионы за неделю. Я даю инструменты. Результат зависит от тебя.
+
+Можно повысить тариф? Да. Доплатить разницу в любой момент.
+
+Бесплатный гостевой доступ — 48 часов: 25 направлений, тест на профориентацию, вводные уроки. Без оплаты. Без обязательств.</div><div class="card-cta">CTA: Начните с бесплатного доступа → t.me/andronova_nata_bot</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-42')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-42', this)">Развернуть</button></div></div>
+
+<!-- ==================== КАРУСЕЛИ (5) ==================== -->
+
+<div class="card" data-platform="carousel">
+    <div class="card-header">
+        <span class="badge badge-carousel">Карусель</span>
+        <span class="card-num">43 / 89</span>
+    </div>
+    <div class="card-title">Мой путь: из декрета в 100К+ удалённо</div>
+    <div class="card-body" id="b-carousel-1">CAPTION:
+Мне было страшно. Я сидела в темноте, когда все уснули, и думала: неужели так будет всегда?
+
+Чужой город. Кредиты. Ссоры из-за денег. День сурка: каша — прогулка — сон. И ощущение, что я перестала расти.
+
+Я не нашла волшебную кнопку. Я ошибалась, покупала курсы, бросала, начинала заново. Но однажды поняла: ещё страшнее — ничего не менять.
+
+Сейчас 100К+ со своего телефона. Без офиса, без будильника. Закрыла долги. Снова танцую и выступаю на чемпионатах.
+
+Листай — расскажу по шагам, как было на самом деле.
+
+→ t.me/andronova_nata_bot
+
+---
+
+СЛАЙД 1 (ОБЛОЖКА)
+Текст: ИЗ ДЕКРЕТА В 100К+
+Подтекст: Мой реальный путь. Без пафоса.
+Промпт: LAYER 1 (BG): Soft gradient from warm cream #F5EDE4 to muted terracotta #A0522D, gentle paper texture overlay, cozy evening ambient lighting. LAYER 2 (EXPERT): Woman 30s, Eastern European features, light brown shoulder-length hair, warm smile, casual home outfit, sitting on a couch with a phone in hand, soft window light behind her. LAYER 3 (INFOGRAPHIC): Small arrow path bottom-left: "декрет → ошибки → 100К+", minimalist line icons. LAYER 4 (TEXT): Top — "ИЗ ДЕКРЕТА В 100К+" in Montserrat Bold white, drop shadow. Bottom — "Мой реальный путь. Без пафоса." in smaller Montserrat Regular, gold #C4A265.
+
+---
+
+СЛАЙД 2
+Текст: ТОЧКА А
+Подтекст: Москва. Декрет. Кредиты. День сурка.
+Промпт: LAYER 1 (BG): Desaturated cool-toned interior, muted grey-blue walls, dim lighting, slightly messy living room, soft vignette. LAYER 2 (EXPERT): Same woman sitting alone at a kitchen table late at night, phone face-down, looking out a dark window, reflective mood. LAYER 3 (INFOGRAPHIC): Subtle icons: baby bottle, credit card, clock showing midnight, semi-transparent at 30% opacity. LAYER 4 (TEXT): "ТОЧКА А" in Montserrat Bold terracotta #A0522D, center-top. Below: "Москва. Декрет. Кредиты. День сурка." in Montserrat Regular cream #F5EDE4.
+
+---
+
+СЛАЙД 3
+Текст: «Я ПЕРЕСТАЛА РАСТИ»
+Подтекст: Не потому что плохо. А потому что стою на месте.
+Промпт: LAYER 1 (BG): Dark moody gradient, deep navy to charcoal, soft bokeh lights like city at night through a window. LAYER 2 (EXPERT): Close-up of woman's hands holding a cold cup of tea, evening light from a phone screen reflecting on her face, contemplative expression. LAYER 3 (INFOGRAPHIC): None — clean emotional slide. LAYER 4 (TEXT): Large quote marks in gold #C4A265. "Я ПЕРЕСТАЛА РАСТИ" in Montserrat Bold white, centered. Below in smaller italic: "Не потому что плохо. А потому что стою на месте."
+
+---
+
+СЛАЙД 4
+Текст: ОШИБКИ
+Подтекст: Курсы. Сомнения. Работа «на дядю» снова.
+Промпт: LAYER 1 (BG): Warm cream #F5EDE4 with subtle crumpled paper texture, light pencil sketch marks scattered. LAYER 2 (EXPERT): Woman at desk, laptop open, several browser tabs, expression of mild frustration, hand on forehead, warm lighting. LAYER 3 (INFOGRAPHIC): Three crossed-out items stacked vertically: "курс #1 ✗", "курс #2 ✗", "снова на дядю ✗" — in terracotta handwritten style font. LAYER 4 (TEXT): "ОШИБКИ" in Montserrat Bold terracotta #A0522D top-center. Subtext in Montserrat Regular dark brown, bottom.
+
+---
+
+СЛАЙД 5
+Текст: МОМЕНТ ПЕРЕЛОМА
+Подтекст: Ещё страшнее было ничего не менять.
+Промпт: LAYER 1 (BG): Split composition — left side dark/muted, right side warm golden light, representing before/after moment. LAYER 2 (EXPERT): Woman standing in a doorway between dark room and sunlit room, half-turned, determined expression, natural home setting. LAYER 3 (INFOGRAPHIC): Simple arrow from dark side to light side, thin gold #C4A265 line. LAYER 4 (TEXT): "МОМЕНТ ПЕРЕЛОМА" in Montserrat Bold white centered top. Bottom: "Ещё страшнее было ничего не менять." in Montserrat Regular cream.
+
+---
+
+СЛАЙД 6
+Текст: НАЧАЛА ДЕЛАТЬ
+Подтекст: Училась, выполняла задания — и окупала вложения.
+Промпт: LAYER 1 (BG): Warm cream workspace, soft morning light, clean desk with phone and notebook, cozy but focused atmosphere. LAYER 2 (EXPERT): Woman typing on phone with focused but calm expression, coffee nearby, baby sleeping in background (blurred), warm tones. LAYER 3 (INFOGRAPHIC): Small progress bar at bottom: 20% → 50% → 80%, gold gradient fill #C4A265. LAYER 4 (TEXT): "НАЧАЛА ДЕЛАТЬ" in Montserrat Bold terracotta #A0522D. Below: "Училась, выполняла задания — и окупала вложения." in Montserrat Regular.
+
+---
+
+СЛАЙД 7
+Текст: ТОЧКА Б — СЕЙЧАС
+Подтекст: 100К+ удалённо. Долги закрыты. Снова танцую.
+Промпт: LAYER 1 (BG): Bright, warm, airy space — sunlit terrace or cafe, golden hour, soft bokeh, cream and gold palette. LAYER 2 (EXPERT): Same woman, genuinely happy and relaxed, phone in one hand, coffee in another, stylish casual outfit, confident posture, warm natural light. LAYER 3 (INFOGRAPHIC): Three checkmarks vertically: "✓ 100К+ удалённо", "✓ долги закрыты", "✓ снова танцую" — gold #C4A265 checkmarks, Montserrat Regular. LAYER 4 (TEXT): "ТОЧКА Б — СЕЙЧАС" in Montserrat Bold white with terracotta underline, top.
+
+---
+
+СЛАЙД 8
+Текст: ПУТЬ БЕЗ ПАФОСА
+Подтекст: Страх, который можно пройти. Декрет, который стал стартом.
+Промпт: LAYER 1 (BG): Warm terracotta #A0522D solid with subtle linen texture, elegant and clean. LAYER 2 (EXPERT): None — text-only motivational slide. LAYER 3 (INFOGRAPHIC): Thin gold line separating quote from CTA, decorative minimal flourish. LAYER 4 (TEXT): Center: "ПУТЬ БЕЗ ПАФОСА" in Montserrat Bold cream #F5EDE4 large. Below in Montserrat Regular smaller: "Страх, который можно пройти. Декрет, который стал стартом." Bottom: "→ t.me/andronova_nata_bot" in gold #C4A265.</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-carousel-1')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-carousel-1', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="carousel">
+    <div class="card-header">
+        <span class="badge badge-carousel">Карусель</span>
+        <span class="card-num">44 / 89</span>
+    </div>
+    <div class="card-title">3 профессии с телефона в декрете</div>
+    <div class="card-body" id="b-carousel-2">CAPTION:
+«А что вообще можно делать с телефона, пока ребёнок спит?»
+
+Вот три профессии, с которых начинают мои ученицы. Без опыта. Без ноутбука. Между детским сном и ужином.
+
+Оля из Самары была бухгалтером — за 5 недель вышла на 47К на маркетплейсах. Аня из Екатеринбурга — 32К за первый месяц в копирайтинге.
+
+Листай — разложила по полочкам: что делаешь, сколько зарабатываешь, сколько учиться.
+
+→ t.me/andronova_nata_bot
+
+---
+
+СЛАЙД 1 (ОБЛОЖКА)
+Текст: 3 ПРОФЕССИИ С ТЕЛЕФОНА
+Подтекст: Пока ребёнок спит. Без опыта.
+Промпт: LAYER 1 (BG): Warm cream #F5EDE4 gradient, soft geometric shapes in terracotta at 15% opacity, modern clean layout. LAYER 2 (EXPERT): Woman sitting on bed with phone, casual cozy outfit, baby crib blurred in background, warm soft lighting, relaxed smile. LAYER 3 (INFOGRAPHIC): Three small phone icons arranged vertically on the right edge, each with a number: 1, 2, 3, in gold circles #C4A265. LAYER 4 (TEXT): "3 ПРОФЕССИИ С ТЕЛЕФОНА" in Montserrat Bold terracotta #A0522D, large centered. Below: "Пока ребёнок спит. Без опыта." in Montserrat Regular dark brown.
+
+---
+
+СЛАЙД 2
+Текст: #1 МЕНЕДЖЕР МАРКЕТПЛЕЙСОВ
+Подтекст: WB, Ozon — загрузка товаров, отзывы, аналитика
+Промпт: LAYER 1 (BG): Clean white-cream #F5EDE4 background with subtle grid pattern, professional but warm feel. LAYER 2 (EXPERT): Hands holding phone showing a marketplace dashboard (WB style interface), table with notebook, warm overhead lighting. LAYER 3 (INFOGRAPHIC): Left side — vertical list: "загрузка товаров", "работа с отзывами", "аналитика остатков" with small terracotta bullet points. Right side — income badge: "20-50К / магазин" in gold #C4A265 rounded rectangle. LAYER 4 (TEXT): "#1 МЕНЕДЖЕР МАРКЕТПЛЕЙСОВ" in Montserrat Bold terracotta #A0522D top-left.
+
+---
+
+СЛАЙД 3
+Текст: КЕЙС: ОЛЯ, 31, САМАРА
+Подтекст: Бухгалтер → 47К за 5 недель, 2 магазина на WB
+Промпт: LAYER 1 (BG): Soft warm gradient cream to light peach, subtle confetti dots in gold at 10% opacity, celebratory but tasteful. LAYER 2 (EXPERT): None — testimonial card design. LAYER 3 (INFOGRAPHIC): Card layout: top — silhouette avatar with "Оля, 31" label. Arrow from "бухгалтер в офисе" → "47К, 2 магазина WB". Timeline bar: "5 недель". All in terracotta and gold. LAYER 4 (TEXT): "КЕЙС: ОЛЯ" in Montserrat Bold terracotta top. Numbers "47К" large in gold #C4A265. "за 5 недель, 2 магазина на WB" in Montserrat Regular.
+
+---
+
+СЛАЙД 4
+Текст: #2 КОПИРАЙТЕР ДЛЯ СОЦСЕТЕЙ
+Подтекст: Посты, сторис, тексты — 500-2000 ₽ за пост
+Промпт: LAYER 1 (BG): Warm cream background with faint Instagram/social media UI elements ghosted at 5% opacity, modern feel. LAYER 2 (EXPERT): Overhead shot of phone on desk showing a text editor app, woman's hands typing, coffee cup, plant, warm natural light. LAYER 3 (INFOGRAPHIC): Right side card: "500-2000₽ / пост", "3-5 клиентов = 30-50К/мес". Small pen icon in terracotta. LAYER 4 (TEXT): "#2 КОПИРАЙТЕР ДЛЯ СОЦСЕТЕЙ" in Montserrat Bold terracotta #A0522D top.
+
+---
+
+СЛАЙД 5
+Текст: КЕЙС: АНЯ, 28, ЕКАТЕРИНБУРГ
+Подтекст: 32К и 3 клиента за первый месяц
+Промпт: LAYER 1 (BG): Same testimonial card style as slide 3, cream with gold accent dots. LAYER 2 (EXPERT): None — testimonial card. LAYER 3 (INFOGRAPHIC): Card: avatar silhouette "Аня, 28". Badge: "32К". "3 клиента за 1 месяц". Small graph line trending up, terracotta stroke. LAYER 4 (TEXT): "КЕЙС: АНЯ" in Montserrat Bold terracotta. "32К" large gold. Subtext in Montserrat Regular.
+
+---
+
+СЛАЙД 6
+Текст: #3 АДМИН СОЦСЕТЕЙ
+Подтекст: Контент, директ, реклама — 15-30К за один аккаунт
+Промпт: LAYER 1 (BG): Cream background, abstract social media icons (chat bubbles, hearts, camera) ghosted at 8% opacity, clean layout. LAYER 2 (EXPERT): Phone screen showing a social media feed being managed, woman's hand scrolling, warm desk setup. LAYER 3 (INFOGRAPHIC): Three task badges: "контент-план", "директ", "таргет" — each with small icon, terracotta color. Income: "15-30К / аккаунт" in gold rounded rect. LAYER 4 (TEXT): "#3 АДМИН СОЦСЕТЕЙ" in Montserrat Bold terracotta #A0522D top.
+
+---
+
+СЛАЙД 7
+Текст: СКОЛЬКО УЧИТЬСЯ?
+Подтекст: 14 уроков по 15 мин. Первые деньги через 4-6 недель.
+Промпт: LAYER 1 (BG): Warm cream #F5EDE4 solid, subtle clock/calendar icons ghosted. LAYER 2 (EXPERT): None — infographic slide. LAYER 3 (INFOGRAPHIC): Center — timeline: "14 уроков × 15 мин" → "практика" → "первые деньги: 4-6 недель". Icons: book, wrench, coin. Terracotta line connecting them, gold accent circles. LAYER 4 (TEXT): "СКОЛЬКО УЧИТЬСЯ?" in Montserrat Bold terracotta top. Bottom: "14 уроков по 15 мин. Первые деньги через 4-6 недель." Montserrat Regular.
+
+---
+
+СЛАЙД 8
+Текст: НАЧНИ ТИХО
+Подтекст: Результат убеждает лучше слов.
+Промпт: LAYER 1 (BG): Warm terracotta #A0522D solid with linen texture. LAYER 2 (EXPERT): None — CTA slide. LAYER 3 (INFOGRAPHIC): Thin gold divider line, small arrow icon pointing right. LAYER 4 (TEXT): "НАЧНИ ТИХО" large Montserrat Bold cream #F5EDE4 centered. "Результат убеждает лучше слов." Montserrat Regular cream, smaller. "→ t.me/andronova_nata_bot" in gold #C4A265 bottom.</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-carousel-2')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-carousel-2', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="carousel">
+    <div class="card-header">
+        <span class="badge badge-carousel">Карусель</span>
+        <span class="card-num">45 / 89</span>
+    </div>
+    <div class="card-title">7 из 10 зарабатывают. А 3 — нет. Почему?</div>
+    <div class="card-body" id="b-carousel-3">CAPTION:
+7 из 10 моих учениц выходят на доход. А 3 — нет.
+
+Я могла бы это спрятать. Но тогда я была бы как все остальные — «100% результат, гарантировано». Нет. Я так не работаю.
+
+Катя из Новосибирска бросила на третьей неделе. Это честная история, и я расскажу её. Потому что важнее понять — в чём разница между теми, кто дошёл, и теми, кто нет.
+
+Листай — без обещаний, только факты.
+
+→ t.me/andronova_nata_bot
+
+---
+
+СЛАЙД 1 (ОБЛОЖКА)
+Текст: 7 ИЗ 10 ЗАРАБАТЫВАЮТ
+Подтекст: А 3 — нет. Честный разбор.
+Промпт: LAYER 1 (BG): Split design — 70% warm cream/gold gradient left, 30% cool grey right, representing success vs not. LAYER 2 (EXPERT): Woman with honest, direct expression, arms crossed casually, looking straight at camera, warm but serious, natural light. LAYER 3 (INFOGRAPHIC): "7 / 10" large in center, 7 in gold #C4A265, "/10" in muted grey, simple bold typography. LAYER 4 (TEXT): "7 ИЗ 10 ЗАРАБАТЫВАЮТ" Montserrat Bold terracotta #A0522D top. "А 3 — нет. Честный разбор." Montserrat Regular dark bottom.
+
+---
+
+СЛАЙД 2
+Текст: 500+ УЧЕНИЦ С 2019 ГОДА
+Подтекст: Средний первый месяц: 35К. Диапазон: 20-55К+.
+Промпт: LAYER 1 (BG): Clean cream #F5EDE4, subtle dot grid pattern, analytical/dashboard feel. LAYER 2 (EXPERT): None — data slide. LAYER 3 (INFOGRAPHIC): Large number "500+" in terracotta. Below: horizontal bar chart — "средний: 35К" with gold fill, range markers "20К" and "55К+" at ends. Small calendar icon "с 2019". LAYER 4 (TEXT): "500+ УЧЕНИЦ С 2019 ГОДА" Montserrat Bold terracotta top. Stats in Montserrat Regular below chart.
+
+---
+
+СЛАЙД 3
+Текст: КТО ДОШЁЛ
+Подтекст: Делала задания. Не ждала «мотивации». Писала в чат.
+Промпт: LAYER 1 (BG): Warm golden glow, cream base, subtle radial light from center, positive energy. LAYER 2 (EXPERT): None — list slide. LAYER 3 (INFOGRAPHIC): Three rows with gold checkmarks: "✓ Делала задания — даже когда лень", "✓ Не ждала мотивации — просто села и начала", "✓ Писала в чат — задавала вопросы". Terracotta accent line left border. LAYER 4 (TEXT): "КТО ДОШЁЛ" Montserrat Bold gold #C4A265 top-left.
+
+---
+
+СЛАЙД 4
+Текст: КЕЙС: ИРА, 38, МОСКВА
+Подтекст: Думала «поздно». 55К стабильно.
+Промпт: LAYER 1 (BG): Warm cream with subtle gold sparkle, testimonial card style. LAYER 2 (EXPERT): None — testimonial. LAYER 3 (INFOGRAPHIC): Card: avatar "Ира, 38, Москва". Quote: "Думала поздно. В самый раз." Arrow from "думала поздно" to "55К стабильно". Gold badge "55К". LAYER 4 (TEXT): "КЕЙС: ИРА" Montserrat Bold terracotta top. "55К" large gold. Quote in Montserrat Italic.
+
+---
+
+СЛАЙД 5
+Текст: КЕЙС: СВЕТА, 33, КРАСНОДАР
+Подтекст: Муж был против. Через 2 месяца — стал фанатом.
+Промпт: LAYER 1 (BG): Same testimonial card style, cream base, warm tones. LAYER 2 (EXPERT): None — testimonial. LAYER 3 (INFOGRAPHIC): Card: avatar "Света, 33". Two-panel: left "муж против ✗" (muted), right "муж — фанат ✓" (gold). Arrow between. "~40К за 2 мес". LAYER 4 (TEXT): "КЕЙС: СВЕТА" Montserrat Bold terracotta. "~40К" gold accent.
+
+---
+
+СЛАЙД 6
+Текст: А КТО НЕ ДОШЁЛ
+Подтекст: Ждала идеальный момент. Не открывала уроки. Решила «не моё».
+Промпт: LAYER 1 (BG): Cool muted tones, desaturated cream-grey, subdued lighting, honest/sober mood. LAYER 2 (EXPERT): None — list slide. LAYER 3 (INFOGRAPHIC): Three rows with grey X marks: "✗ Ждала идеальный момент", "✗ Не открывала уроки неделями", "✗ Решила 'не моё' до конца первого модуля". Grey left border. LAYER 4 (TEXT): "А КТО НЕ ДОШЁЛ" Montserrat Bold muted grey top-left.
+
+---
+
+СЛАЙД 7
+Текст: КАТЯ, 29, НОВОСИБИРСК
+Подтекст: Бросила на 3-й неделе. Я рассказываю это открыто.
+Промпт: LAYER 1 (BG): Neutral warm grey, honest and calm, no dramatic effects, respectful mood. LAYER 2 (EXPERT): None — honest testimonial card. LAYER 3 (INFOGRAPHIC): Simple card: "Катя, 29" avatar. "Бросила на 3-й неделе." Plain text. No arrows, no badges — just the fact. Small text below: "Не у всех получается. И я не прячу это." LAYER 4 (TEXT): "КАТЯ, 29, НОВОСИБИРСК" Montserrat Bold terracotta #A0522D top. Body text Montserrat Regular dark brown.
+
+---
+
+СЛАЙД 8
+Текст: РАЗНИЦА — В ДЕЙСТВИИ
+Подтекст: Не в таланте. Не в возрасте. Не в везении.
+Промпт: LAYER 1 (BG): Warm terracotta gradient, clean, powerful, minimal. LAYER 2 (EXPERT): None — motivational text slide. LAYER 3 (INFOGRAPHIC): Three crossed-out words faded: "талант", "возраст", "везение". One word highlighted in gold: "ДЕЙСТВИЕ". LAYER 4 (TEXT): "РАЗНИЦА — В ДЕЙСТВИИ" Montserrat Bold cream large centered. Subtext: "Не в таланте. Не в возрасте. Не в везении." Montserrat Regular. CTA: "→ t.me/andronova_nata_bot" gold.</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-carousel-3')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-carousel-3', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="carousel">
+    <div class="card-header">
+        <span class="badge badge-carousel">Карусель</span>
+        <span class="card-num">46 / 89</span>
+    </div>
+    <div class="card-title">Сколько стоит и что внутри</div>
+    <div class="card-body" id="b-carousel-4">CAPTION:
+Меня часто спрашивают: «А сколько стоит? А что я получу?»
+
+Рассказываю честно. Четыре тарифа — от 1 990 ₽ до 24 990 ₽. Для разных ситуаций и бюджетов.
+
+14 видеоуроков. Практика на реальных примерах. Личная обратная связь от меня — не от бота, не от стажёра. Чат поддержки 24/7.
+
+Не «обучение ради обучения». Система, чтобы начать зарабатывать.
+
+Листай — разложила каждый тариф.
+
+→ t.me/andronova_nata_bot
+
+---
+
+СЛАЙД 1 (ОБЛОЖКА)
+Текст: СКОЛЬКО СТОИТ И ЧТО ВНУТРИ
+Подтекст: Четыре тарифа. Честно о каждом.
+Промпт: LAYER 1 (BG): Elegant cream #F5EDE4 base, subtle gold foil texture strip at bottom, premium but warm feel. LAYER 2 (EXPERT): Woman with open, welcoming gesture (palms up), casual smart outfit, warm smile, natural indoor lighting. LAYER 3 (INFOGRAPHIC): Four small price tags in a row at bottom: "1 990", "7 990", "14 990", "24 990" — terracotta text, gold tag shape. LAYER 4 (TEXT): "СКОЛЬКО СТОИТ И ЧТО ВНУТРИ" Montserrat Bold terracotta #A0522D large centered. "Четыре тарифа. Честно о каждом." smaller below.
+
+---
+
+СЛАЙД 2
+Текст: ЧТО ОБЩЕГО ВО ВСЕХ ТАРИФАХ
+Подтекст: 14 уроков. 3 практики. Личная обратная связь. Чат 24/7.
+Промпт: LAYER 1 (BG): Clean cream #F5EDE4, subtle geometric accents in terracotta at 10% opacity. LAYER 2 (EXPERT): None — feature list slide. LAYER 3 (INFOGRAPHIC): Four rows with gold icons: video camera → "14 видеоуроков по 15-30 мин", wrench → "3 практических задания", chat bubble → "Личная обратная связь от Натальи", people → "Чат поддержки 24/7". Gold icons, terracotta text. LAYER 4 (TEXT): "ЧТО ОБЩЕГО ВО ВСЕХ ТАРИФАХ" Montserrat Bold terracotta top.
+
+---
+
+СЛАЙД 3
+Текст: БЫСТРЫЙ СТАРТ — 1 990 ₽
+Подтекст: Задачи + моментальный доход. Для тех, кто хочет попробовать.
+Промпт: LAYER 1 (BG): Cream base with single terracotta accent stripe on left, clean card layout. LAYER 2 (EXPERT): None — tariff card. LAYER 3 (INFOGRAPHIC): Card design: header badge "БЫСТРЫЙ СТАРТ" terracotta. Price "1 990 ₽" large. List: "задачи для моментального дохода". Tag: "Для тех, кто хочет попробовать". LAYER 4 (TEXT): Price in Montserrat Bold terracotta, description in Regular. Small note: "дешевле ужина в кафе" in gold italic.
+
+---
+
+СЛАЙД 4
+Текст: СИСТЕМА — 7 990 ₽
+Подтекст: 18 профессий + куратор. Серьёзный подход.
+Промпт: LAYER 1 (BG): Cream base, two terracotta stripes on left, slightly more prominent design than slide 3. LAYER 2 (EXPERT): None — tariff card. LAYER 3 (INFOGRAPHIC): Card: "СИСТЕМА" header. "7 990 ₽" large. List: "18 профессий на выбор", "куратор поддержки". LAYER 4 (TEXT): "СИСТЕМА — 7 990 ₽" Montserrat Bold terracotta top. Body Montserrat Regular.
+
+---
+
+СЛАЙД 5
+Текст: РОСТ — 14 990 ₽ ⭐ ХИТ
+Подтекст: 20+ направлений + куратор. Самый популярный.
+Промпт: LAYER 1 (BG): Warm gold #C4A265 gradient border/frame on cream, "featured" premium look, subtle sparkle. LAYER 2 (EXPERT): None — featured tariff card. LAYER 3 (INFOGRAPHIC): Card with gold border: "РОСТ" + star badge "ХИТ". "14 990 ₽" large gold. List: "20+ направлений", "куратор". Ribbon: "Самый популярный" in gold banner. LAYER 4 (TEXT): "РОСТ — 14 990 ₽" Montserrat Bold gold #C4A265 large. Star icon.
+
+---
+
+СЛАЙД 6
+Текст: ПРЕМИУМ — 24 990 ₽
+Подтекст: 25+ направлений + личная работа с Натальей.
+Промпт: LAYER 1 (BG): Rich terracotta #A0522D base with gold accents, premium exclusive feel, velvet texture. LAYER 2 (EXPERT): None — premium tariff card. LAYER 3 (INFOGRAPHIC): Card on dark terracotta: "ПРЕМИУМ" gold header. "24 990 ₽" large cream. List in cream: "25+ направлений", "личная работа с Натальей", "персональный куратор". LAYER 4 (TEXT): Montserrat Bold cream/gold on terracotta background.
+
+---
+
+СЛАЙД 7
+Текст: ДЛЯ КОГО КАКОЙ?
+Подтекст: Попробовать → Быстрый старт. Серьёзно → Рост. Максимум → Премиум.
+Промпт: LAYER 1 (BG): Clean cream, comparison table layout, subtle grid lines in light terracotta. LAYER 2 (EXPERT): None — comparison guide. LAYER 3 (INFOGRAPHIC): Three rows: "Хочу попробовать → Быстрый старт 1990₽" (arrow), "Хочу систему → Рост 14 990₽ ⭐" (arrow, highlighted), "Хочу максимум → Премиум 24 990₽" (arrow). Color coding: terracotta arrows, gold highlight on Рост. LAYER 4 (TEXT): "ДЛЯ КОГО КАКОЙ?" Montserrat Bold terracotta top.
+
+---
+
+СЛАЙД 8
+Текст: МОЖНО НАЧАТЬ И ВЫРАСТИ
+Подтекст: Доплати разницу — перейди на следующий уровень в любой момент.
+Промпт: LAYER 1 (BG): Warm cream with ascending staircase graphic in terracotta/gold, growth metaphor. LAYER 2 (EXPERT): None — upgrade info slide. LAYER 3 (INFOGRAPHIC): Staircase: step 1 "1 990₽", step 2 "7 990₽", step 3 "14 990₽", step 4 "24 990₽". Arrow going up. "Доплати разницу" label on the arrow. LAYER 4 (TEXT): "МОЖНО НАЧАТЬ И ВЫРАСТИ" Montserrat Bold gold centered. Subtext Montserrat Regular.
+
+---
+
+СЛАЙД 9
+Текст: НЕ УЧЁБА РАДИ УЧЁБЫ
+Подтекст: Система, чтобы начать зарабатывать. Первые деньги — через 4-6 недель.
+Промпт: LAYER 1 (BG): Terracotta #A0522D solid, linen texture, clean CTA slide. LAYER 2 (EXPERT): None. LAYER 3 (INFOGRAPHIC): Crossed out "курс" replaced with "система заработка" in gold. Timeline: "4-6 недель → первые деньги". LAYER 4 (TEXT): "НЕ УЧЁБА РАДИ УЧЁБЫ" Montserrat Bold cream large. Subtext cream Regular. CTA: "→ t.me/andronova_nata_bot" gold.</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-carousel-4')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-carousel-4', this)">Развернуть</button>
+    </div>
+</div>
+
+<div class="card" data-platform="carousel">
+    <div class="card-header">
+        <span class="badge badge-carousel">Карусель</span>
+        <span class="card-num">47 / 89</span>
+    </div>
+    <div class="card-title">5 мифов о заработке в декрете</div>
+    <div class="card-body" id="b-carousel-5">CAPTION:
+«Поздно. Нет времени. Это развод. Муж против. Нужен опыт.»
+
+Знакомо? Я слышу это каждый день. И от учениц, и от тех, кто так и не начал.
+
+Каждый миф — это голос, который врёт. Я разобрала пять самых частых. С реальными кейсами, без мотивационной воды.
+
+Листай — может, узнаешь свой страх.
+
+→ t.me/andronova_nata_bot
+
+---
+
+СЛАЙД 1 (ОБЛОЖКА)
+Текст: 5 МИФОВ О ЗАРАБОТКЕ В ДЕКРЕТЕ
+Подтекст: Разбираю честно. С кейсами.
+Промпт: LAYER 1 (BG): Warm cream #F5EDE4 with five speech bubbles scattered at 15% opacity, each containing a myth snippet, conversational feel. LAYER 2 (EXPERT): Woman with slightly skeptical, knowing expression, one eyebrow raised, casual pose, arms crossed, warm indoor light. LAYER 3 (INFOGRAPHIC): Number "5" large in terracotta center, word "МИФОВ" below. Five small X marks in red-terracotta scattered. LAYER 4 (TEXT): "5 МИФОВ О ЗАРАБОТКЕ В ДЕКРЕТЕ" Montserrat Bold terracotta #A0522D. "Разбираю честно. С кейсами." Montserrat Regular below.
+
+---
+
+СЛАЙД 2
+Текст: МИФ #1: «МНЕ УЖЕ ПОЗДНО»
+Подтекст: Этот голос врёт.
+Промпт: LAYER 1 (BG): Warm cream, large faded quote marks in light terracotta, dramatic typography layout. LAYER 2 (EXPERT): None — myth-busting card. LAYER 3 (INFOGRAPHIC): Large crossed-out text "ПОЗДНО" with red-terracotta X. Below: "Ира, 38 → 55К. Марина, 35 → 28К." with gold checkmarks. Tag: "Возраст — это ресурс, не ограничение." LAYER 4 (TEXT): "МИФ #1" Montserrat Bold gold top-left. "«МНЕ УЖЕ ПОЗДНО»" large Montserrat Bold terracotta crossed out with line. "Этот голос врёт." Montserrat Regular italic.
+
+---
+
+СЛАЙД 3
+Текст: МИФ #2: «НЕТ ВРЕМЕНИ»
+Подтекст: 15 минут, пока ребёнок смотрит мультик.
+Промпт: LAYER 1 (BG): Warm cream, subtle clock icon ghosted at 10%, time theme. LAYER 2 (EXPERT): None — myth card. LAYER 3 (INFOGRAPHIC): Crossed out "нет времени". Below: clock showing 15 min. "14 уроков × 15 мин", "между детским сном и ужином". Gold check. LAYER 4 (TEXT): "МИФ #2" gold top-left. "«НЕТ ВРЕМЕНИ»" Montserrat Bold terracotta with strikethrough. Subtext Montserrat Regular.
+
+---
+
+СЛАЙД 4
+Текст: МИФ #3: «ЭТО ОЧЕРЕДНОЙ РАЗВОД»
+Подтекст: Рейтинг 4.8. Кейсы с именами и городами. Показываю и неудачи.
+Промпт: LAYER 1 (BG): Clean cream, shield/trust badge motif ghosted. LAYER 2 (EXPERT): None — trust card. LAYER 3 (INFOGRAPHIC): Crossed out "развод". Three trust badges: star "4.8 рейтинг", people "500+ учениц", eye "открытые неудачи (кейс Кати)". Terracotta and gold. LAYER 4 (TEXT): "МИФ #3" gold top-left. "«ЭТО ОЧЕРЕДНОЙ РАЗВОД»" Montserrat Bold terracotta strikethrough. Facts in Montserrat Regular below.
+
+---
+
+СЛАЙД 5
+Текст: МИФ #4: «МУЖ ПРОТИВ»
+Подтекст: Света начала тихо за 1 990 ₽. Через 2 месяца муж стал фанатом.
+Промпт: LAYER 1 (BG): Warm cream, soft split — left slightly muted, right warm golden, transformation feel. LAYER 2 (EXPERT): None — story card. LAYER 3 (INFOGRAPHIC): Two-panel: Left "муж против" (muted, X), Right "муж — фанат" (gold, check). Arrow between. Below: "Света, 33, Краснодар. Начала за 1 990₽. Через 2 мес → ~40К." Gold and terracotta. LAYER 4 (TEXT): "МИФ #4" gold top-left. "«МУЖ ПРОТИВ»" Montserrat Bold terracotta strikethrough.
+
+---
+
+СЛАЙД 6
+Текст: МИФ #5: «НУЖЕН ОПЫТ»
+Подтекст: Оля — бухгалтер. Не умела продавать. 5 недель → 47К.
+Промпт: LAYER 1 (BG): Cream base, subtle "0 → 1" graphic ghosted, fresh start theme. LAYER 2 (EXPERT): None — myth card. LAYER 3 (INFOGRAPHIC): Crossed out "нужен опыт". Kase card: "Оля, 31, Самара. Бухгалтер. Опыт в онлайне: 0." Arrow → "47К за 5 недель". Gold badge with "0 → 47К". LAYER 4 (TEXT): "МИФ #5" gold top-left. "«НУЖЕН ОПЫТ»" Montserrat Bold terracotta strikethrough. Kase text Montserrat Regular.
+
+---
+
+СЛАЙД 7
+Текст: А ЧТО ЕСЛИ ВСЕ ЭТИ ГОЛОСА ВРУТ?
+Подтекст: И единственное, чего ты боишься — это начать.
+Промпт: LAYER 1 (BG): Deep terracotta to dark brown gradient, contemplative, powerful mood, soft vignette. LAYER 2 (EXPERT): None — provocative text slide. LAYER 3 (INFOGRAPHIC): Five small speech bubbles fading away: "поздно", "нет времени", "развод", "муж против", "нужен опыт" — each getting more transparent, dissolving. LAYER 4 (TEXT): "А ЧТО ЕСЛИ ВСЕ ЭТИ ГОЛОСА ВРУТ?" Montserrat Bold cream #F5EDE4 large centered. Below smaller: "И единственное, чего ты боишься — это начать." Montserrat Regular gold #C4A265.
+
+---
+
+СЛАЙД 8
+Текст: НАЧНИ ТИХО
+Подтекст: Результат убеждает лучше слов. Старт — от 1 990 ₽.
+Промпт: LAYER 1 (BG): Warm terracotta #A0522D solid, clean, linen texture, confident CTA. LAYER 2 (EXPERT): None — final CTA. LAYER 3 (INFOGRAPHIC): Price badge "от 1 990 ₽" in gold circle. Small arrow pointing to CTA link. LAYER 4 (TEXT): "НАЧНИ ТИХО" Montserrat Bold cream large. "Результат убеждает лучше слов." cream Regular. "→ t.me/andronova_nata_bot" gold #C4A265. "Старт — от 1 990 ₽" gold smaller.</div>
+    <div class="card-actions">
+        <button class="btn-sm btn-sm-accent" onclick="copyText('b-carousel-5')">Копировать текст</button>
+        <button class="btn-sm" onclick="toggleExpand('b-carousel-5', this)">Развернуть</button>
+    </div>
+</div>
+
+<!-- ==================== ВИЗУАЛ-ПРОМПТЫ (42) ====================  -->
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">43 / 84</span></div><div class="card-title">А1. Мой путь из декрета (LOCATION SELFIE)</div><div class="card-body" id="b-43">A confident woman in her 30s with shoulder-length light brown hair and warm smile, sitting at a home office desk, wearing a soft beige cardigan, hands on keyboard. Eastern European features, natural morning golden light from window. Interior: white walls, potted plants, blurred coffee cup. Warm peach and cream color palette. Floating gentle icons around (clock, chart, money symbol, arrow) with soft transparency. Text overlay «Я из декрета в 100К+» on warm peach banner at bottom third. Small text «5 лет назад здесь была депрессия» on background element. Calm, inspiring, authentic photography style.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-43')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-43', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">44 / 84</span></div><div class="card-title">А2. День сурка закончился (SPLIT COMPARE)</div><div class="card-body" id="b-44">Split-screen before/after. LEFT: dreary corporate cubicle, fluorescent gray light, woman 30s light brown hair in business suit, slumped, tired, clock 9-5, closed lock, declining chart. RIGHT: warm home office, peach cream palette, natural light, plants, same woman in sweater, bright smile, energetic, open lock, rising chart. Vertical fire dividing line. Text «БЫЛО / СТАЛО» on divider. Banners: left «офис 28 лет», right «фриланс, дети, мечта». FaceID both sides.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-44')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-44', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">45 / 84</span></div><div class="card-title">А3. 35К за первый месяц (OVERLAY PRESENTER)</div><div class="card-body" id="b-45">Woman 30s, light brown hair, Eastern European features, confident, standing three-quarter pose pointing to infographic. White blouse. Soft warm gradient from peach to cream with semi-transparent geometric shapes. Large bold «35 000₽» framed by warm gold lines. Floating: «Первый месяц», «Менеджер маркетплейсов», «5 часов в день». Text «Не цифра из воздуха. Реальная история.» on background above center. Bottom banner: «Чеки есть, истории настоящие, ссылка в боте.» Professional, trustworthy. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-45')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-45', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">46 / 84</span></div><div class="card-title">А4. 7 из 10 с результатом (INTERACTION)</div><div class="card-body" id="b-46">Woman 30s, light brown hair, sitting and interacting with floating infographic. One hand touches number «7», other in explanatory gesture. Open teaching expression. Bright home office, white walls, soft daylight. Vertical numerical scale 1-10 floating, «7» glowing softly. Icons: people, checkmark, question mark. Text «7 из 10 — с результатом» on warm peach side banner. Smaller: «7 человек из десяти начали зарабатывать за первый месяц». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-46')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-46', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">47 / 84</span></div><div class="card-title">А5. Менеджер маркетплейсов — что это? (INTERACTION)</div><div class="card-body" id="b-47">Woman 30s, light brown hair, standing center, arms gesturing left and right. Open teaching expression, white casual blouse. Soft abstract background with blurred WB and Ozon logos, warm peach and teal palette, gentle wave texture. LEFT: WB with product icons, statistics. RIGHT: Ozon analytics. CENTER: three floating elements «Управление каталогом», «Аналитика», «Маркетинг» connected by energy lines. Text «Ты — глаз компании на маркетплейсе» on background. Bottom: «Управляешь товарами, ценами, отзывами. Зарплата: 35-60К в месяц.» FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-47')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-47', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">48 / 84</span></div><div class="card-title">А6. Копирайтер: 500₽ за пост (OVERLAY PRESENTER)</div><div class="card-body" id="b-48">Woman 30s, light brown hair, sitting three-quarter, focused pride expression, hand on laptop, light clothing. Minimalist warm gradient peach to cream. Blurred laptop edge and notepad. Large bold «500₽» with subtle frame. Floating icons: clock, document, checkmark. Calculator layout «1 пост = 500₽ за 1-2 часа». Text «Один пост. Полтысячи.» on peach banner bottom. Above: «Для компании, которой нужно 20 постов в месяц — это 10 тысяч.» FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-48')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-48', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">49 / 84</span></div><div class="card-title">А7. Муж был против → стал фанатом (SPLIT COMPARE)</div><div class="card-body" id="b-49">Split-screen. LEFT: Natalia and man back-to-back, tense, cold blue-gray palette, storm cloud, declining arrow. Text «Опять за компьютером?». RIGHT: same couple face-to-face, laughing, embrace, warm peach cream palette, sun, growth arrow. Text «Когда закончишь? Хочу вместе поужинать.» Title «До / После» on divider. FaceID on Natalia, man blurred. Emotional relationship shift.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-49')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-49', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">50 / 84</span></div><div class="card-title">А8. 14 уроков по 15 минут (INTERACTION)</div><div class="card-body" id="b-50">Woman 30s, light brown hair, sitting comfortably, holding tablet, pointing at floating lesson elements. Warm smile, casual home clothing. Bright warm home interior, natural daylight, white walls, plant, clock. Peach cream palette. 14 small lesson cards floating, each with number and 15-min timer. Central: «15 мин × 14 = 3,5 часа обучения». Text «Всего 3,5 часа вашего времени» on background top. Bottom: «И ты уже готова начать зарабатывать.» FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-50')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-50', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">51 / 84</span></div><div class="card-title">А9. Поздно начинать? Ира, 38 лет, 55К</div><div class="card-body" id="b-51">Woman 30s (Natalia), light brown hair, sitting, pointing with pride at illustration of 38-year-old woman. Confident «this is real» expression. Warm home office, peach white teal tones, bookshelf, plant, tea cup. Profile illustration showing «38 лет», «Начала с нуля», «55 000₽», family and home icons. Text «Ире было 38. Теперь она зарабатывает 55К.» on background. Bottom: «Возраст — не приговор. Это просто цифра.» FaceID on Natalia.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-51')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-51', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">52 / 84</span></div><div class="card-title">А10. Не инфоцыган. Показываю неудачи тоже</div><div class="card-body" id="b-52">Woman 30s, light brown hair, sitting at desk, hands on table, calm serious direct eye contact. No-makeup natural aesthetic, casual clothing. Imperfectly beautiful background: warm peach and white, forgotten cup, scribbled notepad, slightly messy desk. Natural half-shadow lighting. Scattered sheets with graphs (some declining), marks, «3 месяца», «2 срыва», «7 побед». Text «Я не инфоцыган. Показываю неудачи тоже.» on peach side banner. Above: «Потеряла время, потеряла деньги. И это часть истории.» Authentic, anti-infoscam. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-52')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-52', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">53 / 84</span></div><div class="card-title">Б1-1. Карусель «3 удалённые профессии»: Обложка</div><div class="card-body" id="b-53">Minimalist bright home office. White desk, light wood texture, morning window light. Laptop, coffee cup, blurred child toy. Woman 30s, light brown hair, warm smile, beige sweater, sitting at desk, facing camera. Three icons above (package, pen, chat bubble) with dotted arrow down. Bold Russian text «3 удалённые профессии для мам на декрете» on white banner left. Bottom numbers «+47K», «+32K», «+55K» in peach. Instagram carousel cover. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-53')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-53', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">54 / 84</span></div><div class="card-title">Б1-2. Менеджер маркетплейсов</div><div class="card-body" id="b-54">Home office lifestyle. Woman 30s, light brown hair, warm smile, beige sweater, holding smartphone. Laptop and notebook on desk. Blurred marketplace app interface. Peachy-terracotta wall. Soft home lighting. Floating left: vertical infographic (box, analytics, money icons). Russian text «Менеджер маркетплейсов» with checkmarks. Bottom «Пример: Оля +47K за 5 недель». Instagram carousel, warm lifestyle. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-54')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-54', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">55 / 84</span></div><div class="card-title">Б1-3. Копирайтер</div><div class="card-body" id="b-55">Home office close-up. Woman 30s, light brown hair, focused warm expression, hands on keyboard. Laptop showing blurred text. Soft peachy background, plant on shelf. Floating right: pen, chat, money icons. Russian text «Копирайтер» with checkmarks. «Пример: Аня +32K». Instagram carousel, warm professional. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-55')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-55', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">56 / 84</span></div><div class="card-title">Б1-4. Администратор соцсетей</div><div class="card-body" id="b-56">Energetic home office. Woman 30s, light brown hair, joyful smile, holding smartphone. Dynamic pose. Desk with laptop, sticky notes, planner. Peachy-coral wall. Social media icons (Instagram, Telegram, TikTok) with checkmarks floating. «+55K за 8 мес». Russian text «Администратор соцсетей» with checkmarks. «Пример: Ира +55K, 38 лет». Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-56')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-56', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">57 / 84</span></div><div class="card-title">Б1-5. Сравнительная таблица</div><div class="card-body" id="b-57">Clean gradient peach to white. Centered comparison table, three columns: marketplace manager, copywriter, SMM admin. Icons, data rows (income, hours, difficulty). All Russian. Bottom left: woman 30s, light brown hair, small scale, pointing to table. «Выбери свой путь» top. «Все профессии реально работают» bottom. Instagram carousel, data-driven. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-57')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-57', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">58 / 84</span></div><div class="card-title">Б1-6. Кейс Оли: 47К</div><div class="card-body" id="b-58">Split before/after. LEFT: muted peach, text «Оля, Самара, 32 года, бухгалтер, декрет, стресс». RIGHT: vibrant peach-coral, «+47K/месяц, 2 магазина WB, уверенность». Woman 30s on right, warm smile. Icons: location, baby, marketplace. Instagram carousel testimonial. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-58')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-58', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">59 / 84</span></div><div class="card-title">Б1-7. CTA → Бот</div><div class="card-body" id="b-59">Vibrant CTA with hot peach-coral gradient. Woman 30s, light brown hair, radiant smile, direct eye contact, inviting gesture, pointing down. Bold «Готова начать?» top. Telegram bot link «t.me/andronova_nata_bot» in blue accent. Icons: gift, phone, clock. «Бесплатная консультация, Узнаешь свой путь за 5 минут». Instagram CTA slide. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-59')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-59', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">60 / 84</span></div><div class="card-title">Б2-1. Путь Оли: Before/After Hook</div><div class="card-body" id="b-60">Split-screen dramatic. LEFT: gray-blue, woman stressed, office papers, «15K». RIGHT: vibrant peach, same woman radiant, smartphone with WB interface, «+47K». Top «5 недель», lightning arrow. Russian text both sides. Instagram carousel hook. FaceID both sides.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-60')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-60', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">61 / 84</span></div><div class="card-title">Б2-2. Кто Оля</div><div class="card-body" id="b-61">Warm cozy home. Woman 30s, light brown hair, maternal expression, on cream sofa. Pillows, plants, blurred child toy. Peachy-terracotta walls. Icons: location, baby, briefcase, worried face. Russian text «Это Оля. 32 года, Самара. Бухгалтер.» on peach banner. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-61')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-61', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">62 / 84</span></div><div class="card-title">Б2-3. Неделя 1-2 обучения</div><div class="card-body" id="b-62">Home office learning scene. Woman 30s, focused calm expression, leaning toward laptop. Blurred WB interface on screen. Notebook, pen on desk. Warm peachy background, monitor glow. Timeline graphic: Week 1, Week 2, icons (book, settings, target). Russian text «Неделя 1-2» with steps. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-62')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-62', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">63 / 84</span></div><div class="card-title">Б2-4. Первые результаты</div><div class="card-body" id="b-63">Celebratory vibrant peach-coral gradient. Woman 30s, radiant smile, victory gesture, holding phone with analytics. Floating icons: two boxes, money, chart, rocket. Russian text «Неделя 3» with results. Quote «Система работает!» italics. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-63')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-63', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">64 / 84</span></div><div class="card-title">Б2-5. Результат: 47К</div><div class="card-body" id="b-64">Premium testimonial. Warm peach, white/gold accents. Woman 30s, holding document, joyful proud expression. Central block «+47 000₽ за 5 недель». Icons: calendar, briefcase, boxes, target. Russian text «РЕЗУЛЬТАТ ОЛИ» with details. Quote «Это изменило мою жизнь!» italics. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-64')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-64', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">65 / 84</span></div><div class="card-title">Б2-6. CTA → Бот (Оля)</div><div class="card-body" id="b-65">Hot CTA, vibrant peach-coral gradient. Woman 30s, radiant smile, dynamic pointing gesture. Testimonial badge. Telegram link «t.me/andronova_nata_bot» in blue. «Ты можешь быть как Оля» top. Icons: phone, gift, rocket. Quote «Всё реально. Начни сегодня!» Instagram CTA. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-65')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-65', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">66 / 84</span></div><div class="card-title">Б3-1. Карусель «5 страхов»: Обложка</div><div class="card-body" id="b-66">Empathetic carousel cover. Soft peach with gentle dimming. Woman 30s, light brown hair, hand on heart, compassionate expression, direct eye contact. Five blurred semi-transparent fear icons around. Bold Russian «5 СТРАХОВ ПЕРЕД СТАРТОМ. Страшно начинать? Ты не одна.» on peach banner. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-66')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-66', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">67 / 84</span></div><div class="card-title">Б3-2. Страх «Я тупая, не получится»</div><div class="card-body" id="b-67">Warm supportive slide. Peach background, soft textile visible. Woman 30s, compassionate expression, in cozy chair, open body language. Close to camera. Left: blurred negative self-talk. Right: checkmark facts. Russian text «СТРАХ #1: Я тупая, не получится» with examples. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-67')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-67', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">68 / 84</span></div><div class="card-title">Б3-3. Страх «Поздно начинать»</div><div class="card-body" id="b-68">Inclusive warm slide. Peach background. Woman 30s, warm smile, inclusive gesture. Blurred diverse women silhouettes. Age scale: Марина 25 +28K, Оля 32 +47K, Аня 35 +32K, Ира 38 +55K. Russian text «СТРАХ #2: Поздно начинать» with age examples. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-68')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-68', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">69 / 84</span></div><div class="card-title">Б3-4. Страх «Муж против»</div><div class="card-body" id="b-69">Family-oriented warm slide. Cozy home, peach tones. Woman 30s with male partner, arm on shoulder, both smiling. Family photos blurred. Dialogue bubbles: fear vs reality. «90% семей становятся крепче». Russian text «СТРАХ #3: Муж против» with student quotes. Instagram carousel. FaceID on Natalia.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-69')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-69', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">70 / 84</span></div><div class="card-title">Б3-5. Страх «Это очередной развод»</div><div class="card-body" id="b-70">Clean trust-building slide. Peach background, light texture. Woman 30s, calm confident, open hand gesture (honesty). Comparison table vs. Russian text «СТРАХ #4: Это развод» with trust proof checkmarks. Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-70')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-70', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">71 / 84</span></div><div class="card-title">Б3-6. Страх «Нет времени»</div><div class="card-body" id="b-71">Dynamic organized slide. Peach background, blurred clock/calendar. Woman 30s, holding phone and planner, confident smile. Daily schedule: 2h morning, 2h afternoon, 1-2h evening. Russian text «СТРАХ #5: Нет времени» with schedule. «Время найдётся.» Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-71')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-71', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">72 / 84</span></div><div class="card-title">Б3-7. Как мы работаем со страхами</div><div class="card-body" id="b-72">Hot solution slide. Vibrant peach-coral gradient. Woman 30s, energetic confident, visible hands. Blurred community silhouettes. 5-step system diagram with numbered icons. Russian text «КАК МЫ РАБОТАЕМ СО СТРАХАМИ» with five steps. «Всё входит в любой тариф.» Instagram carousel. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-72')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-72', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">73 / 84</span></div><div class="card-title">Б3-8. CTA → Бот (Страхи)</div><div class="card-body" id="b-73">Hottest CTA. Vibrant coral-peach gradient with glow. Woman 30s, large radiant smile, pointing down. Icons: gift, clock, rocket, chat. «ГОТОВА НАЧАТЬ?» bold. «t.me/andronova_nata_bot» in telegram blue. «Ты достойна большего. Начни сегодня!» Instagram CTA. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-73')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-73', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">74 / 84</span></div><div class="card-title">В1. Reels: «Как я вышла из декрета на 100К» (9:16)</div><div class="card-body" id="b-74">Vertical 9:16 Reels cover. Warm home interior, soft side lighting, shallow depth of field. Woman 30s, light brown hair, full body or waist up, dynamic forward step pose, hand toward camera. Confident smile, movement energy. Casual stylish clothing. Large bold Russian text top «КАК Я ВЫШЛА ИЗ ДЕКРЕТА НА 100К» on semi-transparent banner. Vertical growth arrow «0 → 100К» right side. Bottom «Смотри до конца». Peach white palette. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-74')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-74', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">75 / 84</span></div><div class="card-title">В2. Reels: «3 профессии за месяц» (9:16)</div><div class="card-body" id="b-75">Vertical 9:16 Reels cover. Bright peach gradient, three vertical sections. Woman 30s, face close-up top center, showing three fingers, wide smile. Three profession sections: WB manager, Copywriter, SMM with income numbers. Bold Russian «3 ПРОФЕССИИ ЗА МЕСЯЦ» top. Bottom «Какая твоя?». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-75')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-75', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">76 / 84</span></div><div class="card-title">В3. Reels: «Муж сказал: это развод. А потом...» (9:16)</div><div class="card-body" id="b-76">Vertical 9:16 dramatic Reels cover. Top: dark moody blue-gray, storm clouds, lightning. Bottom: warm peach light. Transition in middle. Woman 30s in bottom bright part, mysterious smile, slight side glance. Intrigue pose. Top: lightning, cloud. Middle: large «?». Bottom: heart, growth. Bold Russian «МУЖ СКАЗАЛ: ЭТО РАЗВОД» top, «А ПОТОМ...» bottom. Clickbait with real story. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-76')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-76', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">77 / 84</span></div><div class="card-title">В4. Reels: «Сколько реально зарабатывают на WB?» (9:16)</div><div class="card-body" id="b-77">Vertical 9:16 Reels cover. Clean peach with sage green accent. Woman 30s, waist up, serious but open expression, arms crossed or hand on chin. Professional confidence. Floating large numbers «20К», «35К», «47К», «55К» with arrows between. WB icon. Bold Russian «СКОЛЬКО РЕАЛЬНО ЗАРАБАТЫВАЮТ НА WB?» large on background. Bottom «Без фантазий. Реальные чеки». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-77')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-77', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">78 / 84</span></div><div class="card-title">В5. Reels: «Тебе 35+? Смотри это» (9:16)</div><div class="card-body" id="b-78">Vertical 9:16 Reels cover. Warm supportive peach with soft glow. Inclusive feeling. Woman 30s, warm confident direct gaze, stop/myth-busting gesture. Large «35+» crossed out with green checkmark. Next to it: «55К», «Ира, 38 лет». Age-to-growth icon. Bold Russian «ТЕБЕ 35+? СМОТРИ ЭТО» on background. Bottom «Возраст — это ресурс, не приговор». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-78')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-78', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">79 / 84</span></div><div class="card-title">В6. Reels: «Бесплатный тест на профориентацию» (9:16)</div><div class="card-body" id="b-79">Vertical 9:16 bright Reels cover. Peach-coral with interactive UI elements (buttons, progress bars). Woman 30s, showing phone screen toward camera (blurred quiz interface). Inviting smile. Quiz UI elements floating: answer options, progress bar, profession icons. Bold Russian «БЕСПЛАТНЫЙ ТЕСТ НА ПРОФОРИЕНТАЦИЮ» top. Bottom «3 минуты → и ты знаешь свой путь. Ссылка в описании». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-79')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-79', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">80 / 84</span></div><div class="card-title">Г1. Story: «Утро фрилансера vs утро в найме»</div><div class="card-body" id="b-80">Vertical 9:16 Story split-screen. LEFT: gray morning, alarm 6:00, metro crowd, stressed woman 30s in coat. RIGHT: warm golden light, coffee, laptop in cozy bed, child playing. Same woman in pajamas, smiling, coffee in hand. «УТРО В НАЙМЕ vs УТРО НА ФРИЛАНСЕ» on divider. Interactive slider hint «А какое утро у тебя?». FaceID both sides.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-80')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-80', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">81 / 84</span></div><div class="card-title">Г2. Story: «Вопрос дня: что останавливает от старта?»</div><div class="card-body" id="b-81">Vertical 9:16 Story poll design. Clean warm peach. Woman 30s close-up, thoughtful expression, finger on chin, looking slightly up. Four styled poll buttons: Страх, Время, Деньги, Не знаю с чего начать. Russian text «ВОПРОС ДНЯ: ЧТО ОСТАНАВЛИВАЕТ ОТ СТАРТА?» top. Bottom «Голосуй». Interactive, engaging. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-81')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-81', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">82 / 84</span></div><div class="card-title">Г3. Story: «Кейс дня: Марина, 35 лет, 28К»</div><div class="card-body" id="b-82">Vertical 9:16 Story case study. Warm documentary style, peach + white. Case card layout: Воронеж, 35, WB manager, 28К, 6 weeks. Star rating. Small avatar of woman 30s in corner (verification). Russian text «КЕЙС ДНЯ: МАРИНА. 35 лет, Воронеж. 28К за 6 недель.» Quote «Жалею что не раньше». Documentary factual style. FaceID small avatar.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-82')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-82', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">83 / 84</span></div><div class="card-title">Г4. Story: «За кулисами: как я записываю уроки»</div><div class="card-body" id="b-83">Vertical 9:16 Story behind-the-scenes. Desk with microphone, ring light, laptop. Creative mess. Warm lamp lighting. Woman 30s, headphones, in front of microphone, focused with slight smile. Creative process vibe. Step arrows: Запись, Монтаж, Загрузка, Ученицы. Icons: mic, computer, phone, people. Russian text «ЗА КУЛИСАМИ. Так я записываю уроки» casual style. «14 уроков x 15 минут». FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-83')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-83', this)">Развернуть</button></div></div>
+
+<div class="card" data-platform="visual"><div class="card-header"><span class="badge badge-visual">Визуал</span><span class="card-num">84 / 84</span></div><div class="card-title">Г5. Story: «Последний день скидки на Быстрый старт»</div><div class="card-body" id="b-84">Vertical 9:16 hot urgency Story. Vibrant coral-peach, timer elements, countdown flashes. Woman 30s, energetic direct gaze, showing one finger (last day). Countdown timer «23:59:59». Crossed out old price, large «1 990₽». Arrow to CTA. Russian text «ПОСЛЕДНИЙ ДЕНЬ! Быстрый старт: 1 990₽» with telegram link. «Свайпай вверх». Maximum urgency. FaceID reference.</div><div class="card-actions"><button class="btn-sm btn-sm-accent" onclick="copyText('b-84')">Копировать текст</button><button class="btn-sm" onclick="toggleExpand('b-84', this)">Развернуть</button></div></div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 Наталья Андронова &middot; Fil AI Hub</p>
+    </div>
+</footer>
+
+<div class="toast" id="toast">Скопировано</div>
+
+<script>
+function filterCards(platform, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#grid .card').forEach(card => {
+        card.style.display = (platform === 'all' || card.dataset.platform === platform) ? '' : 'none';
+    });
+}
+function copyText(id) {
+    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+        const t = document.getElementById('toast');
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 1600);
+    });
+}
+function toggleExpand(id, btn) {
+    const expanded = document.getElementById(id).classList.toggle('expanded');
+    btn.textContent = expanded ? 'Свернуть' : 'Развернуть';
+}
+</script>
+</body>
+</html>

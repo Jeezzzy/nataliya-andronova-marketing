@@ -1,0 +1,48 @@
+{
+  "projectName": "Фабрика Контента — Наталья Андронова",
+  "version": "5.3.3",
+  "model": "claude-opus-4-6",
+
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "teammateMode": "in-process",
+
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash",
+      "Glob",
+      "Grep",
+      "Skill",
+      "Agent",
+      "WebSearch",
+      "WebFetch",
+      "TodoWrite",
+      "mcp__notebooklm-mcp__*",
+      "mcp__obsidian-mcp-tools__*",
+      "mcp__fil-ai-hub__*",
+      "mcp__claude_ai_Canva__*"
+    ],
+    "deny": [
+      "Write(MASTER-PIPELINE.md)",
+      "Write(LAUNCH-PROMPT.md)"
+    ],
+    "additionalDirectories": [
+      "/Users/user/Documents/CLAUDE FIL AI/MARKETING DEPT/НАТАЛЬЯ АНДРОНОВА v1",
+      "/Users/user/.claude",
+      "/Users/user/.claude/plans"
+    ]
+  },
+
+  "context": {
+    "autoReadFiles": [
+      "CLAUDE.md",
+      "memory/active-context.md"
+    ]
+  },
+
+  "notes": "Фабрика Контента v5.3.3 | Fil AI Hub | Agent Teams enabled | voice-adapter + human-style + Agent() оркестрация | MCP: obsidian, notebooklm, canva, fil-ai-hub"
+}
